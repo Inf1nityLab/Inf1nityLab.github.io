@@ -91019,7 +91019,7 @@ Y4(a){var s=0,r=A.V(t.H),q=1,p,o=[],n=this,m,l,k,j,i,h
 var $async$vZ=A.W(function(b,c){if(b===1){p=c
 s=q}while(true)switch(s){case 0:n.ar(new A.aqz(n))
 q=3
-l=A.hL("http://141.136.44.89:8000/chat/create/")
+l=A.hL("https://aika.kg/api/chat/create/")
 k=t.N
 j=A.aF(["Authorization","Token 5661ed1c54cda7e4b7ed71fec6135292f55da6bc","Content-Type","application/json"],k,k)
 s=6
