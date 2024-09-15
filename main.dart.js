@@ -91046,7 +91046,7 @@ case 1:return A.S(p,r)}})
 return A.U($async$vZ,r)},
 T(a){var s=this,r=null,q=A.bt(a,r,t.l).w.a,p=A.M8(A.aIl(A.bJ(s.f?"Yes":"No response yet",r,r,r,r,B.agp,r,r),r,B.af,r,r,B.bm)),o=A.aCO(!0,B.dk,!1,r,!0,B.Q,r,A.aLZ(),s.e,r,r,r,r,r,2,B.NS,B.af,!0,r,!0,r,!1,r,B.dE,r,r,r,r,r,r,r,1,r,r,!1,"\u2022",r,r,r,r,r,!1,r,!1,r,!0,r,B.kN,r,r,B.d4,B.cD,r,r,r,r,r,r,r,B.aT,r,B.mu,r,r,r,r),n=s.x?r:new A.aqu(s),m=t.D
 n=A.iq(new A.bY(B.Mz,A.oE(A.a([p,o,B.adi,new A.LW(n,r,r,r,r,r,r,!1,r,!0,B.aiJ,r)],m),B.aC,B.bv,B.bM),r),r,450)
-return A.Rf(r,B.a_A,A.uq(A.a([n,A.M8(s.f?new A.CL("aika.kg",B.mo,q.a,q.b,new A.aqv(s),new A.aqw(),new A.aqx(),B.akk):new A.y3(new A.aqy(),r))],m),B.aC,B.bM),r,r)}}
+return A.Rf(r,B.a_A,A.uq(A.a([n,A.M8(s.f?new A.CL("https://aika.kg",B.mo,q.a,q.b,new A.aqv(s),new A.aqw(),new A.aqx(),B.akk):new A.y3(new A.aqy(),r))],m),B.aC,B.bM),r,r)}}
 A.aqz.prototype={
 $0(){this.a.x=!0},
 $S:0}
