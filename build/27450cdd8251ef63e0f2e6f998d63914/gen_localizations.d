@@ -1,0 +1,1 @@
+ /Users/baies/StudioProjects/website1/lib/l10n/app_localizations_ky.dart /Users/baies/StudioProjects/website1/lib/l10n/app_localizations_ru.dart /Users/baies/StudioProjects/website1/lib/l10n/app_localizations.dart:  /Users/baies/StudioProjects/website1/l10n.yaml /Users/baies/StudioProjects/website1/lib/l10n/app_ky.arb /Users/baies/StudioProjects/website1/lib/l10n/app_ru.arb
