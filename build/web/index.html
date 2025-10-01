@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -17,20 +17,56 @@
   <base href="/">
 
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Поводырь — сайт о цифровых решениях и мобильных приложениях для незрячих и слабовидящих: инструкции, советы по доступности, полезные ссылки и обзоры (Be My Eyes, OsmAnd, TapTapSee).">
+  <meta name="keywords" content="Поводырь, незрячие, слабовидящие, доступность, доступная среда, ассистивные технологии, мобильные приложения для незрячих, Be My Eyes, OsmAnd, TapTapSee, навигация для незрячих, сайт для людей с нарушением зрения, accessibility, assistive tech, Kyrgyzstan, Кыргызстан, КР, Көрбөгөн, начар көргөн, жеткиликтүүлүк, ассистивдик технологиялар, мобилдик тиркемелер, кыргызча, колдонмо, навигация, колдонуу көрсөтмөсү">
+  <meta name="author" content="Povodyr">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2278FF">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="website1">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <meta name="apple-mobile-web-app-title" content="Povodyr">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="ky_KG">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Povodyr — цифровые решения для незрячих и слабовидящих">
+  <meta property="og:description" content="Инструкции и полезные приложения (Be My Eyes, OsmAnd, TapTapSee) для людей с нарушением зрения.">
+  <meta property="og:image" content="assets/img/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Povodyr — цифровые решения для незрячих и слабовидящих">
+  <meta name="twitter:description" content="Инструкции и полезные приложения (Be My Eyes, OsmAnd, TapTapSee) для людей с нарушением зрения.">
+  <meta name="twitter:image" content="assets/img/logo.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="assets/img/logo.png"/>
 
-  <title>website1</title>
+  <title>Povodyr — цифровые решения для незрячих и слабовидящих</title>
   <link rel="manifest" href="manifest.json">
+  
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="ru" href="/?lang=ru">
+  <link rel="alternate" hreflang="ky" href="/?lang=ky">
+  <link rel="alternate" hreflang="x-default" href="/">
+  
+  <!-- JSON-LD Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Povodyr",
+    "url": "/",
+    "logo": "assets/img/logo.png",
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
