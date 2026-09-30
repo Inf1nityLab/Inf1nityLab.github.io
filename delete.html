@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Okurmen — Аккаунтту өчүрүү / Удаление аккаунта</title>
+  <meta name="description" content="Как удалить аккаунт и данные в приложении Okurmen (kg.okurmen.app)">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root { --text:#1f2330; --muted:#5c6273; --bg:#f6f6fb; --card:#fff; --line:#e4e4ee; --accent:#6366f1; --danger:#ef4444; }
+    @media (prefers-color-scheme: dark) {
+      :root { --text:#ececf3; --muted:#a3a7b7; --bg:#12131a; --card:#1b1d27; --line:#2c2f3d; --accent:#8b8ef7; }
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text);
+           font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    main { max-width:820px; margin:0 auto; padding:24px 16px 64px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
+    header .brand { font-weight:800; font-size:20px; }
+    .lang button { border:1px solid var(--line); background:var(--card); color:var(--text);
+                   padding:6px 12px; border-radius:10px; font-weight:700; cursor:pointer; }
+    .lang button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff; }
+    h1 { font-size:26px; line-height:1.25; margin:0 0 6px; }
+    h2 { font-size:19px; margin:28px 0 8px; }
+    .meta { color:var(--muted); font-size:14px; margin:0 0 8px; }
+    ol, ul { padding-left:22px; }
+    li { margin:4px 0; }
+    .btn { display:inline-block; margin-top:8px; padding:10px 16px; border-radius:12px;
+           background:var(--accent); color:#fff; text-decoration:none; font-weight:700; }
+    .step { color:var(--danger); font-weight:700; }
+    a { color:var(--accent); }
+    [data-lang] { display:none; }
+    body.ky [data-lang="ky"], body.ru [data-lang="ru"] { display:block; }
+  </style>
+</head>
+<body class="ky">
+<main>
+  <header>
+    <span class="brand">Okurmen</span>
+    <span class="lang">
+      <button type="button" data-set="ky" aria-pressed="true">КЫР</button>
+      <button type="button" data-set="ru" aria-pressed="false">РУ</button>
+    </span>
+  </header>
+
+  <!-- ============================ РУССКИЙ ============================ -->
+  <article class="card" data-lang="ru">
+    <h1>Удаление аккаунта</h1>
+    <p class="meta">Приложение «Okurmen» — учреждение «Образовательный центр «Окурмэн»</p>
+
+    <h2>Удалить самому — в приложении или на сайте</h2>
+    <ol>
+      <li>Откройте приложение Okurmen или сайт и войдите в свой аккаунт.</li>
+      <li>Перейдите на вкладку <b>«Профиль»</b>.</li>
+      <li>Внизу нажмите <span class="step">«Удалить аккаунт»</span> и подтвердите.</li>
+    </ol>
+    <p>Если обучение приостановлено, та же кнопка есть на экране «Обучение на паузе».</p>
+    <a class="btn" href="./">Открыть сайт Okurmen</a>
+
+    <h2>Не получается войти</h2>
+    <p>Напишите нам на <a href="mailto:okurmen@gmail.com">okurmen@gmail.com</a> с того номера телефона или email, которые указаны
+      в аккаунте, и укажите имя. Мы удалим аккаунт в течение 30 дней и сообщим об этом.
+      Аккаунты сотрудников школы (менторов, кураторов) удаляет администратор — по тому же адресу.</p>
+
+    <h2>Что удаляется</h2>
+    <ul>
+      <li>профиль: имя, телефон, email, фото;</li>
+      <li>прогресс обучения, время учёбы, результаты тестов и игр, баллы, место в рейтинге;</li>
+      <li>записи к ментору и отзывы о занятиях;</li>
+      <li>сообщения в чате и полученные объявления;</li>
+      <li>связь с родителем и ссылки для родителя;</li>
+      <li>токены устройств для уведомлений и отчёты об ошибках, связанные с аккаунтом.</li>
+    </ul>
+    <p>Удаление через приложение или сайт происходит сразу. Отчёты о сбоях в Firebase удаляются
+      автоматически через 90 дней. Сведения, которые мы обязаны хранить по закону (например, об оплате обучения),
+      хранятся в течение установленного законом срока.</p>
+    <p>Подробнее — в <a href="privacy.html">политике конфиденциальности</a>.</p>
+  </article>
+
+  <!-- ============================ КЫРГЫЗЧА ============================ -->
+  <article class="card" data-lang="ky">
+    <h1>Аккаунтту өчүрүү</h1>
+    <p class="meta">«Okurmen» тиркемеси — «Окурмэн» билим берүү борбору» мекемеси</p>
+
+    <h2>Өзүңүз өчүрүү — тиркемеде же сайтта</h2>
+    <ol>
+      <li>Okurmen тиркемесин же сайтты ачып, аккаунтуңузга кириңиз.</li>
+      <li><b>«Профиль»</b> бөлүмүнө өтүңүз.</li>
+      <li>Ылдый жактагы <span class="step">«Аккаунтту өчүрүү»</span> баскычын басып, ырастаңыз.</li>
+    </ol>
+    <p>Эгер окуу убактылуу токтотулган болсо, ошол эле баскыч «Окуу тыныгууда» экранында бар.</p>
+    <a class="btn" href="./">Okurmen сайтын ачуу</a>
+
+    <h2>Кире албай жатасызбы</h2>
+    <p>Аккаунтта көрсөтүлгөн телефон же email аркылуу <a href="mailto:okurmen@gmail.com">okurmen@gmail.com</a> дарегине жазып,
+      атыңызды көрсөтүңүз. Аккаунтту 30 күндүн ичинде өчүрүп, сизге кабарлайбыз.
+      Мектептин кызматкерлеринин (менторлордун, кураторлордун) аккаунтун администратор өчүрөт — ошол эле дарек боюнча.</p>
+
+    <h2>Эмнелер өчүрүлөт</h2>
+    <ul>
+      <li>профиль: аты-жөнү, телефон, email, сүрөт;</li>
+      <li>окуудагы прогресс, окуу убактысы, тесттердин жана оюндардын жыйынтыктары, упайлар, рейтингдеги орун;</li>
+      <li>менторго жазылуулар жана сабактар тууралуу пикирлер;</li>
+      <li>чаттагы билдирүүлөр жана алынган жарыялар;</li>
+      <li>ата-эне менен байланыш жана ата-эне үчүн шилтемелер;</li>
+      <li>билдирүүлөр үчүн түзмөк токендери жана аккаунтка байланышкан каталар тууралуу отчеттор.</li>
+    </ul>
+    <p>Тиркеме же сайт аркылуу өчүрүү дароо ишке ашат. Firebase'деги каталар тууралуу отчеттор
+      90 күндөн кийин автоматтык түрдө өчүрүлөт. Мыйзам боюнча сактоого милдеттүү маалыматтар (мисалы, окуу
+      үчүн төлөм тууралуу) мыйзамда белгиленген мөөнөткө чейин сакталат.</p>
+    <p>Кененирээк — <a href="privacy.html">купуялуулук саясатында</a>.</p>
+  </article>
+</main>
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang button');
+    function set(lang) {
+      document.body.className = lang;
+      document.documentElement.lang = lang;
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === lang)); });
+      try { localStorage.setItem('privacy_lang', lang); } catch (e) {}
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
+    var saved = null;
+    try { saved = localStorage.getItem('privacy_lang'); } catch (e) {}
+    var hash = location.hash.replace('#', '');
+    set(hash === 'ru' || hash === 'ky' ? hash : (saved === 'ru' ? 'ru' : 'ky'));
+  })();
+</script>
+</body>
+</html>
