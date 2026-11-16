@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Баястан Айтматов · Резюме</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+<style>
+  :root { --bg:#f7f5f1; --card:#fff; --line:#e7e3dc; --text:#1c1e27; --muted:#6c7080; --indigo:#5b6cff; --violet:#7c3aed; --mint:#16c49a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  html[data-lang="ru"] [data-l="ky"], html[data-lang="ky"] [data-l="ru"] { display: none !important; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 20px 60px; }
+  .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .back { text-decoration: none; color: var(--indigo); font-weight: 800; font-size: 17px; background: #fff; border: 2px solid var(--line); border-radius: 14px; padding: 10px 16px; }
+  .lang button { border: 2px solid var(--line); background: #fff; border-radius: 10px; padding: 8px 12px; font-weight: 800; cursor: pointer; }
+  .lang button.on { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+  .head { background: linear-gradient(135deg, var(--indigo), var(--violet)); color: #fff; border-radius: 28px; padding: 28px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  .head img { width: 120px; height: 120px; border-radius: 24px; object-fit: cover; border: 4px solid rgba(255,255,255,.9); }
+  .head .k { font-size: 13px; font-weight: 800; letter-spacing: .12em; opacity: .85; text-transform: uppercase; }
+  .head h1 { margin: 6px 0 4px; font-size: 34px; letter-spacing: -.02em; }
+  .head .r { font-size: 18px; font-weight: 700; opacity: .95; }
+  .head .site { display: inline-block; margin-top: 10px; color: #fff; font-weight: 700; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+  .stat { background: #fff; border: 2px solid var(--line); border-radius: 18px; padding: 16px; }
+  .stat b { font-size: 28px; display: block; }
+  .stat span { color: var(--muted); font-size: 14px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; }
+  .box { background: #fff; border: 2px solid var(--line); border-radius: 22px; padding: 22px; margin-bottom: 16px; }
+  h2 { margin: 0 0 14px; font-size: 20px; }
+  p { margin: 0 0 10px; line-height: 1.55; color: #3a3d4a; }
+  .job { padding: 14px 0; border-top: 1px solid var(--line); }
+  .job:first-of-type { border-top: 0; padding-top: 0; }
+  .job .h { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-weight: 800; }
+  .job .w { color: var(--indigo); font-weight: 700; font-size: 15px; margin: 2px 0 8px; }
+  .job .d { color: var(--muted); font-size: 14px; font-weight: 700; }
+  ul { margin: 0; padding-left: 18px; } li { margin: 6px 0; line-height: 1.5; color: #3a3d4a; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 12px; }
+  .chips span { background: #f1efff; color: #4b47c9; border-radius: 8px; padding: 5px 10px; font-size: 13px; font-weight: 700; }
+  .cap { font-size: 12px; font-weight: 800; letter-spacing: .1em; color: var(--muted); margin-top: 6px; }
+  .prod { border: 2px solid var(--line); border-radius: 16px; padding: 14px; margin-bottom: 10px; }
+  .prod b { font-size: 17px; } .prod .s { color: var(--mint); font-size: 13px; font-weight: 800; margin-left: 6px; }
+  .prod p { font-size: 14px; margin: 6px 0 0; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="back" href="lesson-01.html?embed=1" onclick="if (history.length > 1) { history.back(); return false; }">← <span data-l="ru">К презентации</span><span data-l="ky">Презентацияга</span></a>
+    <div class="lang"><button data-set="ru">RU</button> <button data-set="ky">KY</button></div>
+  </div>
+
+  <div class="head">
+    <img src="img/author.jpg" alt="">
+    <div>
+      <div class="k"><span data-l="ru">Основатель CodeCrafters</span><span data-l="ky">CodeCrafters негиздөөчүсү</span></div>
+      <h1>Баястан Айтматов</h1>
+      <div class="r">Senior Fullstack Developer · Flutter · TypeScript · Go · AI</div>
+      <a class="site" href="https://codecrafters-kg.vercel.app">codecrafters-kg.vercel.app →</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>2019</b><span data-l="ru">начал коммерческую разработку</span><span data-l="ky">коммерциялык иштеп чыгууну баштадым</span></div>
+    <div class="stat"><b>12</b><span data-l="ru">проектов в портфолио</span><span data-l="ky">портфолиодо долбоор</span></div>
+    <div class="stat"><b>5</b><span data-l="ru">собственных продуктов</span><span data-l="ky">өз продукт</span></div>
+    <div class="stat"><b>7</b><span data-l="ru">платформ, включая ОС Аврора</span><span data-l="ky">платформа, ОС Аврора да</span></div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="box">
+        <h2><span data-l="ru">Обо мне</span><span data-l="ky">Мен жөнүндө</span></h2>
+        <p data-l="ru">Fullstack-разработчик с коммерческим опытом с 2019 года. Веду продукт целиком: архитектура, мобильные и веб-клиенты, backend, база данных, релиз и поддержка.</p>
+        <p data-l="ky">2019-жылдан бери коммерциялык тажрыйбасы бар fullstack-иштеп чыгуучу. Продуктту толугу менен жүргүзөм: архитектура, мобилдик жана веб-кардарлар, backend, маалымат базасы, релиз жана колдоо.</p>
+        <p data-l="ru">Работал над продуктами для страхования, аренды транспорта и вещей, коммуникаций, медицины и образования — для клиентов из России и США. Основал студию CodeCrafters и запустил пять собственных продуктов. Обучаю и менторю Flutter-разработчиков.</p>
+        <p data-l="ky">Камсыздандыруу, транспорт жана буюм ижарасы, байланыш, медицина жана билим берүү продуктулары үстүндө Россия жана АКШдан кардарлар үчүн иштедим. CodeCrafters студиясын негиздеп, беш өз продуктумду ишке киргиздим. Flutter-иштеп чыгуучуларды окутам.</p>
+      </div>
+
+      <div class="box">
+        <h2><span data-l="ru">Опыт работы</span><span data-l="ky">Иш тажрыйбасы</span></h2>
+        <div class="job">
+          <div class="h"><span><span data-l="ru">Основатель</span><span data-l="ky">Негиздөөчү</span> · Senior Fullstack Developer</span><span class="d"><span data-l="ru">Август 2025 — сейчас</span><span data-l="ky">2025-ж. август — азыр</span></span></div>
+          <div class="w">CodeCrafters</div>
+          <ul>
+            <li data-l="ru">Запустил собственные продукты: Okurmen, Studify, MENSA, Dev Engine и Такси Абхазия</li>
+            <li data-l="ky">Өз продуктуларымды ишке киргиздим: Okurmen, Studify, MENSA, Dev Engine жана Такси Абхазия</li>
+            <li data-l="ru">Полный цикл: требования, архитектура, UI, разработка, тестирование, CI/CD, публикация и поддержка</li>
+            <li data-l="ky">Толук цикл: талаптар, архитектура, UI, иштеп чыгуу, тестирлөө, CI/CD, жарыялоо жана колдоо</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="h"><span>Flutter Developer</span><span class="d">2025</span></div>
+          <div class="w">Gapopa</div>
+          <ul>
+            <li data-l="ru">Мессенджер уровня Telegram: realtime-чаты, аудио- и видеозвонки</li>
+            <li data-l="ky">Telegram деңгээлиндеги мессенджер: realtime-чаттар, аудио жана видео чалуулар</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="h"><span>Flutter Developer</span><span class="d"><span data-l="ru">Март 2022 — Январь 2025</span><span data-l="ky">2022-ж. март — 2025-ж. январь</span></span></div>
+          <div class="w"><span data-l="ru">Коммерческая разработка · клиенты из России и США</span><span data-l="ky">Коммерциялык иштеп чыгуу · Россия жана АКШ кардарлары</span></div>
+          <ul>
+            <li data-l="ru">ЭНЕРГОГАРАНТ: ОСАГО, страхование путешествий и ипотеки, ДМС, распознавание паспорта и ВУ; ОС Аврора</li>
+            <li data-l="ky">ЭНЕРГОГАРАНТ: ОСАГО, саякат жана ипотека камсыздандыруусу, ДМС, паспорт жана айдоочу күбөлүгүн таануу; ОС Аврора</li>
+            <li data-l="ru">Whizz: аренда электровелосипедов для курьеров в США, Apple Pay и Google Pay; 4,7★ в App Store</li>
+            <li data-l="ky">Whizz: АКШдагы курьерлер үчүн электровелосипед ижарасы, Apple Pay жана Google Pay; App Store'до 4,7★</li>
+            <li data-l="ru">БериСдавай, Мой Девайс, TruCare, Bow Shock: новые функции, переработка кода, релизы</li>
+            <li data-l="ky">БериСдавай, Мой Девайс, TruCare, Bow Shock: жаңы функциялар, кодду кайра иштетүү, релиздер</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="h"><span><span data-l="ru">Стажёр Flutter</span><span data-l="ky">Flutter стажёру</span></span><span class="d">2019</span></div>
+          <div class="w">MegaLab · Neobis</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="box">
+        <h2><span data-l="ru">Собственные продукты</span><span data-l="ky">Өз продуктуларым</span></h2>
+        <div class="prod"><b>Okurmen</b><span class="s">● <span data-l="ru">Релиз 1.3</span><span data-l="ky">1.3 релиз</span></span>
+          <p data-l="ru">Обучающая платформа: курс как игра — уровни, XP, рейтинг.</p><p data-l="ky">Окуу платформасы: курс оюн сыяктуу — деңгээлдер, XP, рейтинг.</p></div>
+        <div class="prod"><b>MENSA</b><span class="s">● <span data-l="ru">Демо онлайн</span><span data-l="ky">Онлайн демо</span></span>
+          <p data-l="ru">Заказ по QR-коду, официант получает заказ на планшет.</p><p data-l="ky">QR-код менен буйрутма, официант планшетке алат.</p></div>
+        <div class="prod"><b>Studify</b><span class="s">● <span data-l="ru">Веб-версия</span><span data-l="ky">Веб-версия</span></span>
+          <p data-l="ru">Управление учебными центрами: группы, расписание, финансы.</p><p data-l="ky">Окуу борборлорун башкаруу: топтор, расписание, каржы.</p></div>
+        <div class="prod"><b>Dev Engine</b><span class="s" style="color:#d08a00">● <span data-l="ru">В разработке</span><span data-l="ky">Иштелүүдө</span></span>
+          <p data-l="ru">Свой backend-as-a-service на Go; ИИ собирает бэкенд по описанию.</p><p data-l="ky">Go'догу өз backend-as-a-service; ЖИ бэкендди сүрөттөмө боюнча курат.</p></div>
+        <div class="prod"><b>Такси Абхазия</b><span class="s" style="color:#d08a00">● <span data-l="ru">В разработке</span><span data-l="ky">Иштелүүдө</span></span>
+          <p data-l="ru">Одно приложение для клиента и водителя, заказ на карте.</p><p data-l="ky">Кардар жана айдоочу үчүн бир колдонмо, картадан буйрутма.</p></div>
+      </div>
+      <div class="box">
+        <h2><span data-l="ru">Навыки</span><span data-l="ky">Көндүмдөр</span></h2>
+        <div class="cap">MOBILE</div><div class="chips"><span>Flutter</span><span>Dart</span><span>iOS</span><span>Android</span><span>BLoC</span><span>Riverpod</span></div>
+        <div class="cap">FRONTEND</div><div class="chips"><span>TypeScript</span><span>React</span><span>Next.js</span><span>Vite</span></div>
+        <div class="cap">BACKEND</div><div class="chips"><span>Go</span><span>REST API</span><span>WebSocket</span><span>Supabase</span></div>
+        <div class="cap">AI</div><div class="chips"><span>Claude API</span><span>AI-агенты</span><span>LLM</span></div>
+        <div class="cap">DEVOPS</div><div class="chips"><span>Docker</span><span>CI/CD</span><span>Vercel</span><span>App Store</span><span>Google Play</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    var p = new URLSearchParams(location.search), l;
+    try { l = p.get('lang') || localStorage.getItem('deck-lang'); } catch (e) {}
+    function set(x) {
+      document.documentElement.dataset.lang = x === 'ky' ? 'ky' : 'ru';
+      try { localStorage.setItem('deck-lang', x); } catch (e) {}
+      document.querySelectorAll('[data-set]').forEach(function (b) { b.classList.toggle('on', b.dataset.set === x); });
+    }
+    set(l || 'ru');
+    document.querySelectorAll('[data-set]').forEach(function (b) { b.onclick = function () { set(b.dataset.set); }; });
+  })();
+</script>
+</body>
+</html>

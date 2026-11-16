@@ -9,19 +9,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
 <link rel="stylesheet" href="deck.css">
 <style>
-  .links { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
-  .link {
-    display: block; text-decoration: none; color: var(--ink, #1c1e27);
-    background: var(--card); border: 2px solid var(--line); border-radius: 36px;
-    padding: 56px 48px; box-shadow: 0 18px 40px rgba(28,30,39,.06);
-    transition: transform .2s, border-color .2s;
+  .hero { display: grid; grid-template-columns: 1fr 640px; gap: 80px; align-items: center; height: 100%; }
+  .person {
+    background: linear-gradient(150deg, #5b6cff, #7c3aed); border-radius: 48px; padding: 56px;
+    color: #fff; box-shadow: 0 40px 80px rgba(91,108,255,.30); text-align: center;
   }
-  .link:hover { transform: translateY(-6px); border-color: #5b6cff; }
-  .link .icon { font-size: 110px; line-height: 1; }
-  .link .lbl { margin-top: 28px; font-size: 48px; font-weight: 800; }
-  .link .go { margin-top: 18px; font-size: 30px; font-weight: 700; color: #5b6cff; }
-  .me { display: flex; align-items: center; gap: 44px; }
-  .me img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 18px 40px rgba(28,30,39,.15); }
+  .person img { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 8px solid rgba(255,255,255,.9); }
+  .person .nm { margin-top: 28px; font-size: 54px; font-weight: 800; letter-spacing: -.02em; }
+  .person .rl { margin-top: 8px; font-size: 30px; font-weight: 600; opacity: .9; }
+  .person .tags { display: flex; gap: 12px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+  .person .tags span { background: rgba(255,255,255,.18); border-radius: 999px; padding: 8px 20px; font-size: 24px; font-weight: 700; }
+  .btns { display: flex; gap: 28px; margin-top: 56px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 18px; text-decoration: none; white-space: nowrap;
+    font-size: 38px; font-weight: 800; padding: 30px 46px; border-radius: 28px;
+    transition: transform .2s var(--ease), box-shadow .2s;
+  }
+  .btn:hover { transform: translateY(-4px); }
+  .btn.main { background: var(--text); color: #fff; box-shadow: 0 20px 40px rgba(28,30,39,.25); }
+  .btn.alt { background: #fff; color: var(--text); border: 3px solid var(--line); }
+  .prods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 50px; }
+  .prod { background: #fff; border: 2px solid var(--line); border-radius: 36px; padding: 44px 38px; box-shadow: 0 18px 40px rgba(28,30,39,.06); }
+  .prod .ic { font-size: 84px; line-height: 1; }
+  .prod .t { margin-top: 26px; font-size: 42px; font-weight: 800; }
+  .prod .d { margin-top: 12px; font-size: 27px; font-weight: 600; color: var(--muted); line-height: 1.3; }
+  .prod .b { display: inline-block; margin-top: 18px; font-size: 22px; font-weight: 800; color: var(--mint); }
 </style>
 </head>
 <body>
@@ -32,48 +44,64 @@
 
 <div class="stage">
 
-  <!-- 1. Титул -->
+  <!-- 1. Знакомство -->
   <section class="slide">
-    <div>
-      <div class="kicker rise">👋 <span data-l="ru">Урок 1</span><span data-l="ky">1-сабак</span></div>
-      <h1 class="rise" style="--d:.15s">
-        <span data-l="ru"><span class="hl">Знакомство</span></span>
-        <span data-l="ky"><span class="hl">Таанышуу</span></span>
-      </h1>
-      <p class="sub rise" style="--d:.3s">
-        <span data-l="ru">Кто я и что мы сделаем за курс</span>
-        <span data-l="ky">Мен киммин жана курста эмне жасайбыз</span>
-      </p>
+    <div class="hero">
+      <div>
+        <div class="kicker rise">👋 <span data-l="ru">Урок 1 · Знакомство</span><span data-l="ky">1-сабак · Таанышуу</span></div>
+        <h1 class="rise" style="--d:.15s">
+          <span data-l="ru">Салам! Я — <span class="hl">ваш ментор</span></span>
+          <span data-l="ky">Салам! Мен — <span class="hl">сиздин ментор</span></span>
+        </h1>
+        <p class="sub rise" style="--d:.3s">
+          <span data-l="ru">С 2019 года делаю приложения и сайты. Вместе мы сделаем свой продукт с ИИ.</span>
+          <span data-l="ky">2019-жылдан бери колдонмо жана сайт жасайм. Бирге ЖИ менен өз продуктубузду жасайбыз.</span>
+        </p>
+        <div class="btns rise" style="--d:.45s">
+          <a class="btn main" href="resume.html">📄 <span data-l="ru">Моё резюме</span><span data-l="ky">Менин резюмем</span></a>
+          <a class="btn alt" href="https://codecrafters-kg.vercel.app">🚀 <span data-l="ru">Мои проекты</span><span data-l="ky">Долбоорлорум</span></a>
+        </div>
+      </div>
+      <div class="person pop" style="--d:.3s">
+        <img src="img/author.jpg" alt="">
+        <div class="nm">Баястан Айтматов</div>
+        <div class="rl">Senior Fullstack Developer</div>
+        <div class="tags"><span>Flutter</span><span>TypeScript</span><span>Go</span><span>AI</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- 2. Кто я -->
+  <!-- 2. Мои продукты -->
   <section class="slide">
-    <div class="me rise">
-      <img src="img/author.jpg" alt="">
-      <div>
-        <h2 style="margin:0">Баястан <span class="hl">Айтматов</span></h2>
-        <p class="sub" style="margin:10px 0 0">Senior Fullstack Developer · <span data-l="ru">основатель</span><span data-l="ky">негиздөөчү</span> CodeCrafters</p>
-      </div>
+    <h2 class="rise" style="margin:0">
+      <span data-l="ru">Что я <span class="hl">уже сделал</span></span>
+      <span data-l="ky">Мен <span class="hl">эмне жасадым</span></span>
+    </h2>
+    <div class="prods">
+      <div class="prod pop" style="--d:.15s"><div class="ic">🎓</div><div class="t">Okurmen</div>
+        <div class="d"><span data-l="ru">Это приложение, в котором вы учитесь</span><span data-l="ky">Сиз окуп жаткан ушул колдонмо</span></div>
+        <div class="b">App Store · Google Play</div></div>
+      <div class="prod pop" style="--d:.3s"><div class="ic">🍽️</div><div class="t">MENSA</div>
+        <div class="d"><span data-l="ru">QR-меню для ресторана — как в нашем курсе</span><span data-l="ky">Ресторан үчүн QR-меню — курстагыдай</span></div>
+        <div class="b">React · Flutter · Supabase</div></div>
+      <div class="prod pop" style="--d:.45s"><div class="ic">🏫</div><div class="t">Studify</div>
+        <div class="d"><span data-l="ru">Управление учебными центрами</span><span data-l="ky">Окуу борборлорун башкаруу</span></div>
+        <div class="b">Web · iOS · Android</div></div>
+      <div class="prod pop" style="--d:.6s"><div class="ic">⚙️</div><div class="t">Dev Engine</div>
+        <div class="d"><span data-l="ru">Свой бэкенд, который собирает ИИ</span><span data-l="ky">ЖИ куруучу өз бэкенди</span></div>
+        <div class="b">Go · PostgreSQL</div></div>
     </div>
-    <div class="cards">
-      <div class="card pop" style="--d:.2s"><div class="icon">2019</div><div class="lbl"><span data-l="ru">в коммерческой разработке</span><span data-l="ky">коммерциялык иштеп чыгууда</span></div></div>
-      <div class="card pop" style="--d:.35s"><div class="icon">12</div><div class="lbl"><span data-l="ru">проектов в портфолио</span><span data-l="ky">портфолиодо долбоор</span></div></div>
-      <div class="card pop" style="--d:.5s"><div class="icon">5</div><div class="lbl"><span data-l="ru">своих продуктов</span><span data-l="ky">өз продукт</span></div></div>
-      <div class="card pop" style="--d:.65s"><div class="icon">🇷🇺 🇺🇸</div><div class="lbl"><span data-l="ru">клиенты из России и США</span><span data-l="ky">Россия жана АКШдан кардарлар</span></div></div>
-    </div>
-    <div class="links" style="grid-template-columns:1fr;margin-top:40px">
-      <a class="link pop" style="--d:.8s;padding:36px 48px" href="https://codecrafters-kg.vercel.app" target="_blank" rel="noopener">
-        <div class="lbl" style="margin:0">🚀 <span data-l="ru">Портфолио: все проекты</span><span data-l="ky">Портфолио: бардык долбоорлор</span> <span class="go">codecrafters-kg.vercel.app →</span></div>
-      </a>
-    </div>
+    <p class="sub rise" style="--d:.8s;margin-top:44px">
+      <span data-l="ru">+ клиенты из России и США: страхование, аренда e-bike, мессенджер со звонками</span>
+      <span data-l="ky">+ Россия жана АКШдан кардарлар: камсыздандыруу, e-bike ижарасы, чалуулары бар мессенджер</span>
+    </p>
   </section>
 
   <!-- 3. Что сделаем за курс -->
   <section class="slide">
     <h2 class="rise" style="margin:0 0 10px">
-      <span data-l="ru">Что мы <span class="hl">сделаем</span></span>
-      <span data-l="ky">Эмне <span class="hl">жасайбыз</span></span>
+      <span data-l="ru">Что мы <span class="hl">сделаем</span> на курсе</span>
+      <span data-l="ky">Курста эмне <span class="hl">жасайбыз</span></span>
     </h2>
     <div class="cards">
       <div class="card pop" style="--d:.2s"><div class="icon">📱</div><div class="lbl"><span data-l="ru">Электронное меню кафе</span><span data-l="ky">Кафенин электрондук менюсу</span></div></div>
@@ -86,6 +114,7 @@
   <div class="counter"></div>
   <div class="progress"></div>
 </div>
+
 <script src="deck.js"></script>
 </body>
 </html>
