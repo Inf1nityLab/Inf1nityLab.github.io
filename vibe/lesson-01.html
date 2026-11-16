@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 1 · Знакомство</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+<style>
+  .links { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+  .link {
+    display: block; text-decoration: none; color: var(--ink, #1c1e27);
+    background: var(--card); border: 2px solid var(--line); border-radius: 36px;
+    padding: 56px 48px; box-shadow: 0 18px 40px rgba(28,30,39,.06);
+    transition: transform .2s, border-color .2s;
+  }
+  .link:hover { transform: translateY(-6px); border-color: #5b6cff; }
+  .link .icon { font-size: 110px; line-height: 1; }
+  .link .lbl { margin-top: 28px; font-size: 48px; font-weight: 800; }
+  .link .go { margin-top: 18px; font-size: 30px; font-weight: 700; color: #5b6cff; }
+  .me { display: flex; align-items: center; gap: 44px; }
+  .me img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 18px 40px rgba(28,30,39,.15); }
+</style>
+</head>
+<body>
+<div class="controls">
+  <button data-set-lang="ru">RU</button>
+  <button data-set-lang="ky">KY</button>
+</div>
+
+<div class="stage">
+
+  <!-- 1. Титул -->
+  <section class="slide">
+    <div>
+      <div class="kicker rise">👋 <span data-l="ru">Урок 1</span><span data-l="ky">1-сабак</span></div>
+      <h1 class="rise" style="--d:.15s">
+        <span data-l="ru"><span class="hl">Знакомство</span></span>
+        <span data-l="ky"><span class="hl">Таанышуу</span></span>
+      </h1>
+      <p class="sub rise" style="--d:.3s">
+        <span data-l="ru">Кто я и что мы сделаем за курс</span>
+        <span data-l="ky">Мен киммин жана курста эмне жасайбыз</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Кто я -->
+  <section class="slide">
+    <div class="me rise">
+      <img src="img/author.jpg" alt="">
+      <div>
+        <h2 style="margin:0">Баястан <span class="hl">Айтматов</span></h2>
+        <p class="sub" style="margin:10px 0 0">Senior Fullstack Developer · <span data-l="ru">основатель</span><span data-l="ky">негиздөөчү</span> CodeCrafters</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card pop" style="--d:.2s"><div class="icon">2019</div><div class="lbl"><span data-l="ru">в коммерческой разработке</span><span data-l="ky">коммерциялык иштеп чыгууда</span></div></div>
+      <div class="card pop" style="--d:.35s"><div class="icon">12</div><div class="lbl"><span data-l="ru">проектов в портфолио</span><span data-l="ky">портфолиодо долбоор</span></div></div>
+      <div class="card pop" style="--d:.5s"><div class="icon">5</div><div class="lbl"><span data-l="ru">своих продуктов</span><span data-l="ky">өз продукт</span></div></div>
+      <div class="card pop" style="--d:.65s"><div class="icon">🇷🇺 🇺🇸</div><div class="lbl"><span data-l="ru">клиенты из России и США</span><span data-l="ky">Россия жана АКШдан кардарлар</span></div></div>
+    </div>
+    <div class="links" style="grid-template-columns:1fr;margin-top:40px">
+      <a class="link pop" style="--d:.8s;padding:36px 48px" href="https://codecrafters-kg.vercel.app" target="_blank" rel="noopener">
+        <div class="lbl" style="margin:0">🚀 <span data-l="ru">Портфолио: все проекты</span><span data-l="ky">Портфолио: бардык долбоорлор</span> <span class="go">codecrafters-kg.vercel.app →</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. Что сделаем за курс -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 10px">
+      <span data-l="ru">Что мы <span class="hl">сделаем</span></span>
+      <span data-l="ky">Эмне <span class="hl">жасайбыз</span></span>
+    </h2>
+    <div class="cards">
+      <div class="card pop" style="--d:.2s"><div class="icon">📱</div><div class="lbl"><span data-l="ru">Электронное меню кафе</span><span data-l="ky">Кафенин электрондук менюсу</span></div></div>
+      <div class="card pop" style="--d:.35s"><div class="icon">👨‍🍳</div><div class="lbl"><span data-l="ru">Заказы сразу на кухню</span><span data-l="ky">Буйрутма дароо ашканага</span></div></div>
+      <div class="card pop" style="--d:.5s"><div class="icon">✈️</div><div class="lbl"><span data-l="ru">Telegram Mini App</span><span data-l="ky">Telegram Mini App</span></div></div>
+      <div class="card pop" style="--d:.65s"><div class="icon">🤖</div><div class="lbl"><span data-l="ru">Всё — вместе с ИИ</span><span data-l="ky">Баары — ЖИ менен</span></div></div>
+    </div>
+  </section>
+
+  <div class="counter"></div>
+  <div class="progress"></div>
+</div>
+<script src="deck.js"></script>
+</body>
+</html>

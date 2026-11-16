@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 5 · Как писать запрос</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+<style>
+  /* Урок 5: карточки «ещё приёмы» */
+  .tips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; margin-top: 24px; }
+  .tip {
+    display: grid; grid-template-columns: 96px 1fr; gap: 24px; align-items: center;
+    background: var(--card); border: 2px solid var(--line); border-radius: 30px; padding: 28px 32px;
+    box-shadow: 0 14px 30px rgba(28,30,39,.05);
+  }
+  .tip .ic { font-size: 76px; line-height: 1; text-align: center; }
+  .tip .lbl { font-size: 38px; font-weight: 800; letter-spacing: -.01em; }
+  .tip .ex { margin-top: 10px; display: inline-block; background: #eef0ff; border-radius: 16px; padding: 10px 18px; font-size: 25px; font-weight: 700; line-height: 1.3; }
+  .note {
+    display: inline-flex; align-items: center; gap: 14px; margin-top: 26px; padding: 14px 26px; border-radius: 20px;
+    background: #fff6e0; border: 2px solid #ffe2a3; color: #8a5a00; font-size: 28px; font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<!-- Кыргызский текст — черновой перевод, проверить носителем языка перед записью. -->
+
+<div class="controls">
+  <button data-set-lang="ru">RU</button>
+  <button data-set-lang="ky">KY</button>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#1c1e27" flood-opacity=".10"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="stage">
+
+  <!-- 1. Титул -->
+  <section class="slide">
+    <div class="sec">
+      <div>
+        <div class="kicker rise">✍️ <span data-l="ru">Урок 5</span><span data-l="ky">5-сабак</span></div>
+        <h1 class="rise" style="--d:.15s">
+          <span data-l="ru">Как писать <span class="hl">запрос</span></span>
+          <span data-l="ky">Суроону кантип <span class="hl">жазуу</span></span>
+        </h1>
+        <p class="sub rise" style="--d:.3s"><span data-l="ru">Что писать и чего не писать</span><span data-l="ky">Эмне жазуу керек, эмне жазбоо керек</span></p>
+      </div>
+      <svg class="ill" viewBox="0 0 860 720">
+        <defs>
+          <clipPath id="t1a"><rect x="110" y="290" width="0" height="60">
+            <animate attributeName="width" values="0;660" dur="1.2s" begin="indefinite" fill="freeze"/>
+          </rect></clipPath>
+          <clipPath id="t1b"><rect x="110" y="356" width="0" height="60">
+            <animate attributeName="width" values="0;0;660" keyTimes="0;.5;1" dur="2.4s" begin="indefinite" fill="freeze"/>
+          </rect></clipPath>
+        </defs>
+        <g fill="none" stroke-width="4" stroke-dasharray="1" stroke-linecap="round">
+          <path class="draw" pathLength="1" style="--d:2.7s;--t:.4s" d="M250 196 L 250 258" stroke="#5b6cff"/>
+          <path class="draw" pathLength="1" style="--d:2.85s;--t:.4s" d="M630 186 L 630 258" stroke="#16c49a"/>
+          <path class="draw" pathLength="1" style="--d:3s;--t:.4s" d="M250 462 L 250 536" stroke="#ffb020"/>
+          <path class="draw" pathLength="1" style="--d:3.15s;--t:.4s" d="M630 462 L 630 546" stroke="#ff5fa2"/>
+        </g>
+        <g class="rise" style="--d:.2s">
+          <rect x="80" y="258" width="700" height="204" rx="32" fill="#fff" filter="url(#sh)"/>
+        </g>
+        <g clip-path="url(#t1a)" font-size="34" font-weight="700" fill="#1c1e27">
+          <text x="116" y="336" data-l="ru">Сайт-меню для кафе: гости</text>
+          <text x="116" y="336" data-l="ky">Кафе үчүн сайт-меню: коноктор</text>
+        </g>
+        <g clip-path="url(#t1b)" font-size="34" font-weight="700" fill="#1c1e27">
+          <text x="116" y="400" data-l="ru">заказывают с телефона ✨</text>
+          <text x="116" y="400" data-l="ky">телефондон заказ беришет ✨</text>
+        </g>
+        <rect class="blink" x="116" y="420" width="4" height="26" fill="#5b6cff"/>
+
+        <g transform="translate(250,160)"><g class="pop" style="--d:2.4s"><g class="float">
+          <rect x="-110" y="-34" width="220" height="68" rx="34" fill="#5b6cff"/>
+          <text x="-72" y="12" font-size="30">🎯</text>
+          <text x="-28" y="10" font-size="26" font-weight="800" fill="#fff" data-l="ru">Цель</text>
+          <text x="-28" y="10" font-size="26" font-weight="800" fill="#fff" data-l="ky">Максат</text>
+        </g></g></g>
+        <g transform="translate(630,150)"><g class="pop" style="--d:2.55s"><g class="float" style="--fd:.6s">
+          <rect x="-120" y="-34" width="240" height="68" rx="34" fill="#16c49a"/>
+          <text x="-86" y="12" font-size="30">👥</text>
+          <text x="-42" y="10" font-size="26" font-weight="800" fill="#fff">Контекст</text>
+        </g></g></g>
+        <g transform="translate(250,572)"><g class="pop" style="--d:2.7s"><g class="float2">
+          <rect x="-110" y="-34" width="220" height="68" rx="34" fill="#ffb020"/>
+          <text x="-76" y="12" font-size="30">📎</text>
+          <text x="-32" y="10" font-size="26" font-weight="800" fill="#fff" data-l="ru">Пример</text>
+          <text x="-32" y="10" font-size="26" font-weight="800" fill="#fff" data-l="ky">Мисал</text>
+        </g></g></g>
+        <g transform="translate(630,582)"><g class="pop" style="--d:2.85s"><g class="float" style="--fd:1.1s">
+          <rect x="-110" y="-34" width="220" height="68" rx="34" fill="#ff5fa2"/>
+          <text x="-76" y="12" font-size="30">📏</text><text x="-32" y="10" font-size="26" font-weight="800" fill="#fff">Формат</text>
+        </g></g></g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 2. Плохой и хороший запрос -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 14px">
+      <span data-l="ru">Плохой и <span class="hl">хороший</span> запрос</span>
+      <span data-l="ky">Жаман жана <span class="hl">жакшы</span> суроо</span>
+    </h2>
+    <div class="vs">
+      <div class="vcard bad from-l" style="--d:.3s">
+        <div class="vhead">❌ <span data-l="ru">Плохо</span><span data-l="ky">Жаман</span></div>
+        <div class="pbub">«<span data-l="ru">Сделай сайт</span><span data-l="ky">Сайт жаса</span>»</div>
+        <div class="vdown">↓</div>
+        <svg viewBox="0 0 700 280" width="100%" style="display:block">
+          <g class="fade" style="--d:1s">
+            <rect x="2" y="2" width="696" height="276" rx="22" fill="#f7f5f1" stroke="#e7e3dc" stroke-width="3"/>
+            <rect x="26" y="24" width="648" height="40" rx="12" fill="#e7e3dc"/>
+            <rect x="26" y="86" width="200" height="140" rx="16" fill="#ecebe7"/>
+            <rect x="250" y="86" width="200" height="140" rx="16" fill="#ecebe7"/>
+            <rect x="474" y="86" width="200" height="140" rx="16" fill="#ecebe7"/>
+            <rect x="26" y="242" width="300" height="16" rx="8" fill="#e7e3dc"/>
+          </g>
+          <g transform="translate(350,180)"><g class="pop" style="--d:1.5s"><text class="wiggle" y="0" font-size="110" font-weight="800" fill="#c9c6bf" text-anchor="middle">?</text></g></g>
+          <g transform="translate(620,262)"><g class="pop" style="--d:1.8s"><text font-size="52" text-anchor="middle">🤷</text></g></g>
+        </svg>
+      </div>
+      <div class="vcard good from-r" style="--d:.5s">
+        <div class="vhead">✅ <span data-l="ru">Хорошо</span><span data-l="ky">Жакшы</span></div>
+        <div class="pbub">«<span data-l="ru">Сделай сайт-меню для кафе: 3&nbsp;категории, корзина, светлый стиль, для&nbsp;телефона</span><span data-l="ky">Кафе үчүн сайт-меню жаса: 3&nbsp;категория, себет, ачык стиль, телефон үчүн</span>»</div>
+        <div class="vdown">↓</div>
+        <svg viewBox="0 0 700 280" width="100%" style="display:block">
+          <g class="fade" style="--d:1.2s">
+            <rect x="2" y="2" width="696" height="276" rx="22" fill="#fff" stroke="#bfeee0" stroke-width="3"/>
+            <rect x="26" y="24" width="648" height="44" rx="12" fill="#5b6cff"/>
+            <text x="46" y="54" font-size="22" font-weight="800" fill="#fff">Café Bishkek</text>
+            <text x="652" y="56" font-size="24" text-anchor="end">🛒</text>
+          </g>
+          <g class="pop" style="--d:1.5s"><rect x="26" y="82" width="120" height="34" rx="17" fill="#e9ebff"/><text x="86" y="105" font-size="16" font-weight="800" fill="#5b6cff" text-anchor="middle" data-l="ru">Горячее</text><text x="86" y="105" font-size="16" font-weight="800" fill="#5b6cff" text-anchor="middle" data-l="ky">Ысык тамак</text></g>
+          <g class="pop" style="--d:1.6s"><rect x="156" y="82" width="120" height="34" rx="17" fill="#e3f7f1"/><text x="216" y="105" font-size="16" font-weight="800" fill="#0f8f70" text-anchor="middle" data-l="ru">Напитки</text><text x="216" y="105" font-size="16" font-weight="800" fill="#0f8f70" text-anchor="middle" data-l="ky">Суусундук</text></g>
+          <g class="pop" style="--d:1.7s"><rect x="286" y="82" width="120" height="34" rx="17" fill="#fff0e8"/><text x="346" y="105" font-size="16" font-weight="800" fill="#ff7a59" text-anchor="middle" data-l="ru">Десерты</text><text x="346" y="105" font-size="16" font-weight="800" fill="#ff7a59" text-anchor="middle" data-l="ky">Десерттер</text></g>
+          <g class="rise" style="--d:1.9s"><rect x="26" y="130" width="200" height="130" rx="16" fill="#fff3e8"/><text x="126" y="200" font-size="52" text-anchor="middle">🍲</text><rect x="46" y="226" width="90" height="14" rx="7" fill="#ffb37a"/></g>
+          <g class="rise" style="--d:2.05s"><rect x="250" y="130" width="200" height="130" rx="16" fill="#e3f7f1"/><text x="350" y="200" font-size="52" text-anchor="middle">🥟</text><rect x="270" y="226" width="90" height="14" rx="7" fill="#7fd9bf"/></g>
+          <g class="rise" style="--d:2.2s"><rect x="474" y="130" width="200" height="130" rx="16" fill="#eef0ff"/><text x="574" y="200" font-size="52" text-anchor="middle">🍵</text><rect x="494" y="226" width="90" height="14" rx="7" fill="#a9b2ff"/></g>
+          <g transform="translate(640,150)"><g class="pop" style="--d:2.5s"><text class="float" font-size="40" text-anchor="middle">✨</text></g></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Формула -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 10px">
+      <span data-l="ru">Формула <span class="hl">запроса</span></span>
+      <span data-l="ky">Суроонун <span class="hl">формуласы</span></span>
+    </h2>
+    <div class="frows">
+      <div class="frow">
+        <span class="flab pop" style="--d:.3s;background:#5b6cff">🎯 <span data-l="ru">Цель</span><span data-l="ky">Максат</span></span>
+        <span class="fex from-l" style="--d:.45s">«<span data-l="ru">Сделай сайт-меню для кафе</span><span data-l="ky">Кафе үчүн сайт-меню жаса</span>»</span>
+      </div>
+      <div class="frow">
+        <span class="flab pop" style="--d:.7s;background:#16c49a">👥 Контекст</span>
+        <span class="fex from-l" style="--d:.85s">«<span data-l="ru">Гости заказывают с телефона, главное — быстро</span><span data-l="ky">Коноктор телефондон заказ берет, эң негизгиси — тез</span>»</span>
+      </div>
+      <div class="frow">
+        <span class="flab pop" style="--d:1.1s;background:#ffb020">📎 <span data-l="ru">Пример</span><span data-l="ky">Мисал</span></span>
+        <span class="fex from-l" style="--d:1.25s">«<span data-l="ru">Вот скрин — сделай похоже</span><span data-l="ky">Мына скрин — ушуга окшош жаса</span>»</span>
+      </div>
+      <div class="frow">
+        <span class="flab pop" style="--d:1.5s;background:#ff5fa2">📏 Формат</span>
+        <span class="fex from-l" style="--d:1.65s">«<span data-l="ru">Дай код одним файлом</span><span data-l="ky">Кодду бир файл менен бер</span>»</span>
+      </div>
+      <div class="frow">
+        <span class="flab pop" style="--d:1.9s;background:#9b6bff">✅ <span data-l="ru">Готово, если</span><span data-l="ky">Даяр, эгер</span></span>
+        <span class="fex from-l" style="--d:2.05s">«<span data-l="ru">…открывается на телефоне и есть корзина</span><span data-l="ky">…телефондо ачылса жана себет болсо</span>»</span>
+      </div>
+    </div>
+    <div class="note pop" style="--d:2.5s">🎭 <span data-l="ru">«Ты — эксперт…» можно не писать: контекст важнее</span><span data-l="ky">«Сен — экспертсиң…» деп жазбасаңыз болот: контекст маанилүүрөк</span></div>
+  </section>
+
+  <!-- 4. Что писать / чего не писать -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 20px">
+      <span data-l="ru">Что писать и чего <span class="hl">не&nbsp;писать</span></span>
+      <span data-l="ky">Эмне жазуу жана эмне <span class="hl">жазбоо</span></span>
+    </h2>
+    <div class="dd">
+      <div>
+        <h3 class="rise" style="--d:.2s;color:#0f8f70">✅ <span data-l="ru">Пишите</span><span data-l="ky">Жазыңыз</span></h3>
+        <div class="it from-l" style="--d:.35s"><span class="e">👥</span><span data-l="ru">Для кого и зачем</span><span data-l="ky">Ким үчүн жана эмне үчүн</span></div>
+        <div class="it from-l" style="--d:.5s"><span class="e">🎨</span><span data-l="ru">Детали: цвета, язык, размер</span><span data-l="ky">Деталдар: түс, тил, өлчөм</span></div>
+        <div class="it from-l" style="--d:.65s"><span class="e">📸</span><span data-l="ru">Пример или скрин</span><span data-l="ky">Мисал же скрин</span></div>
+        <div class="it from-l" style="--d:.8s"><span class="e">📏</span><span data-l="ru">Каким должен быть ответ</span><span data-l="ky">Жооп кандай болушу керек</span></div>
+        <div class="it from-l" style="--d:.95s"><span class="e">👣</span><span data-l="ru">По одному шагу</span><span data-l="ky">Бир-бир кадамдан</span></div>
+      </div>
+      <div>
+        <h3 class="rise" style="--d:1.1s;color:#e5484d">❌ <span data-l="ru">Не пишите</span><span data-l="ky">Жазбаңыз</span></h3>
+        <div class="it from-r" style="--d:1.25s"><span class="e">🙄</span><span class="strike" style="--sd:2.2s"><span data-l="ru">«Сделай красиво» — и всё</span><span data-l="ky">«Кооз кыл» — болду</span></span></div>
+        <div class="it from-r" style="--d:1.4s"><span class="e">🧺</span><span class="strike" style="--sd:2.4s"><span data-l="ru">Всё сразу в одном запросе</span><span data-l="ky">Баарын бир суроодо</span></span></div>
+        <div class="it from-r" style="--d:1.55s"><span class="e">🔑</span><span class="strike" style="--sd:2.6s"><span data-l="ru">Пароли, ключи, личные данные</span><span data-l="ky">Сырсөз, ачкыч, жеке маалымат</span></span></div>
+        <div class="it from-r" style="--d:1.7s"><span class="e">🔀</span><span class="strike" style="--sd:2.8s"><span data-l="ru">«Коротко, но подробно»</span><span data-l="ky">«Кыска, бирок толук»</span></span></div>
+        <div class="it from-r" style="--d:1.85s"><span class="e">😠</span><span class="strike" style="--sd:3s"><span data-l="ru">Ругать ИИ</span><span data-l="ky">ЖИни урушуу</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4а. Ещё 4 приёма -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 6px">
+      <span data-l="ru">Ещё 4 приёма — <span class="hl">промпт сильнее</span></span>
+      <span data-l="ky">Дагы 4 ыкма — <span class="hl">промпт күчтүүрөк</span></span>
+    </h2>
+    <div class="tips">
+      <div class="tip pop" style="--d:.3s"><span class="ic float">🗺️</span><div>
+        <div class="lbl"><span data-l="ru">Сначала план</span><span data-l="ky">Адегенде план</span></div>
+        <div class="ex">«<span data-l="ru">Сначала напиши план, жди моего «да»</span><span data-l="ky">Адегенде план жаз, менин «ооба» дегенимди күт</span>»</div></div></div>
+      <div class="tip pop" style="--d:.6s"><span class="ic float" style="--fd:.4s">📎</span><div>
+        <div class="lbl"><span data-l="ru">Дай материалы</span><span data-l="ky">Материал бериңиз</span></div>
+        <div class="ex">«<span data-l="ru">Вот текст, скрин и ошибка целиком</span><span data-l="ky">Мына текст, скрин жана ката толугу менен</span>»</div></div></div>
+      <div class="tip pop" style="--d:.9s"><span class="ic float" style="--fd:.8s">⭐</span><div>
+        <div class="lbl"><span data-l="ru">Скажи главное</span><span data-l="ky">Негизгисин айтыңыз</span></div>
+        <div class="ex">«<span data-l="ru">Главное — скорость, дизайн простой</span><span data-l="ky">Эң негизгиси — ылдамдык, дизайн жөнөкөй</span>»</div></div></div>
+      <div class="tip pop" style="--d:1.2s"><span class="ic float" style="--fd:1.2s">🔍</span><div>
+        <div class="lbl"><span data-l="ru">Проверь себя</span><span data-l="ky">Өзүңдү текшер</span></div>
+        <div class="ex">«<span data-l="ru">Проверь ответ и найди свои ошибки</span><span data-l="ky">Жоопту текшерип, өз катаңды тап</span>»</div></div></div>
+    </div>
+  </section>
+
+  <!-- 5. Шаг 1: пусть ИИ спросит -->
+  <section class="slide">
+    <div class="sec">
+      <div>
+        <div class="kicker rise">💡 <span data-l="ru">Главный приём</span><span data-l="ky">Негизги ыкма</span></div>
+        <h2 class="rise" style="--d:.15s;margin-bottom:14px"><span data-l="ru">Пусть ИИ сам&nbsp;спросит</span><span data-l="ky">ЖИ өзү сурасын</span></h2>
+        <p class="sub rise" style="--d:.25s;margin:0"><span data-l="ru">Он поймёт, чего не хватает</span><span data-l="ky">Эмне жетишпей турганын ал өзү түшүнөт</span></p>
+        <div class="steps">
+          <span class="stp on rise" style="--d:.4s"><span class="num">1</span><span data-l="ru">Спроси меня</span><span data-l="ky">Менден сура</span></span>
+          <span class="stp rise" style="--d:.5s"><span class="num">2</span><span data-l="ru">Напиши промпт</span><span data-l="ky">Промпт жаз</span></span>
+          <span class="stp rise" style="--d:.6s"><span class="num">3</span><span data-l="ru">Сделай</span><span data-l="ky">Жаса</span></span>
+        </div>
+      </div>
+      <svg class="ill" viewBox="0 0 860 720">
+        <g class="rise" style="--d:.2s">
+          <rect x="20" y="20" width="820" height="680" rx="32" fill="#fff" filter="url(#sh)"/>
+          <path d="M20 84 H840" stroke="#f1efe9" stroke-width="3"/>
+          <circle cx="60" cy="52" r="9" fill="#ff7a59"/><circle cx="88" cy="52" r="9" fill="#ffb020"/><circle cx="116" cy="52" r="9" fill="#16c49a"/>
+        </g>
+        <g class="from-r" style="--d:.5s">
+          <rect x="250" y="110" width="570" height="136" rx="26" fill="#5b6cff"/>
+          <g font-size="25" font-weight="700" fill="#fff">
+            <text x="280" y="158" data-l="ru">Хочу сайт-меню для кафе.</text>
+            <text x="280" y="192" data-l="ru">Задай мне 5 вопросов, чтобы</text>
+            <text x="280" y="226" data-l="ru">понять, что нужно.</text>
+            <text x="280" y="158" data-l="ky">Кафе үчүн сайт-меню керек.</text>
+            <text x="280" y="192" data-l="ky">Эмне керек экенин түшүнүү</text>
+            <text x="280" y="226" data-l="ky">үчүн мага 5 суроо бер.</text>
+          </g>
+        </g>
+        <g class="temp" style="--d:1.1s;--t:1.3s">
+          <rect x="50" y="272" width="130" height="60" rx="24" fill="#f1efe9"/>
+          <circle class="bounce-dot" cx="86" cy="302" r="8" fill="#9aa0ad"/>
+          <circle class="bounce-dot" style="--bd:.15s" cx="115" cy="302" r="8" fill="#9aa0ad"/>
+          <circle class="bounce-dot" style="--bd:.3s" cx="144" cy="302" r="8" fill="#9aa0ad"/>
+        </g>
+        <rect class="pop" style="--d:2.4s" x="50" y="272" width="680" height="404" rx="26" fill="#f1efe9"/>
+        <g font-size="25" fill="#1c1e27">
+          <g class="fade" style="--d:2.6s" font-weight="800">
+            <text x="82" y="322" data-l="ru">Хорошо! Ответьте на вопросы:</text>
+            <text x="82" y="322" data-l="ky">Макул! Суроолорго жооп бериңиз:</text>
+          </g>
+          <g class="rise" style="--d:2.9s" font-weight="600"><text x="82" y="380" data-l="ru">1. Как называется кафе?</text><text x="82" y="380" data-l="ky">1. Кафенин аты эмне?</text></g>
+          <g class="rise" style="--d:3.15s" font-weight="600"><text x="82" y="432" data-l="ru">2. Какие блюда в меню?</text><text x="82" y="432" data-l="ky">2. Менюда кандай тамактар бар?</text></g>
+          <g class="rise" style="--d:3.4s" font-weight="600"><text x="82" y="484" data-l="ru">3. Какие цвета нравятся?</text><text x="82" y="484" data-l="ky">3. Кандай түстөр жагат?</text></g>
+          <g class="rise" style="--d:3.65s" font-weight="600"><text x="82" y="536" data-l="ru">4. Нужны корзина и заказ?</text><text x="82" y="536" data-l="ky">4. Себет жана буйрутма керекпи?</text></g>
+          <g class="rise" style="--d:3.9s" font-weight="600"><text x="82" y="588" data-l="ru">5. С телефона или компьютера?</text><text x="82" y="588" data-l="ky">5. Телефонданбы же компьютерденби?</text></g>
+        </g>
+        <g transform="translate(790,664)"><g class="pop" style="--d:4.2s"><text class="wiggle" font-size="56" text-anchor="middle">🙋</text></g></g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 6. Шаги 2–3: промпт и результат -->
+  <section class="slide">
+    <div class="sec">
+      <div>
+        <div class="kicker rise">💡 <span data-l="ru">Главный приём</span><span data-l="ky">Негизги ыкма</span></div>
+        <h2 class="rise" style="--d:.15s;margin-bottom:14px"><span data-l="ru">Потом — промпт и&nbsp;результат</span><span data-l="ky">Анан — промпт жана жыйынтык</span></h2>
+        <p class="sub rise" style="--d:.25s;margin:0"><span data-l="ru">ИИ сам напишет хороший промпт</span><span data-l="ky">Жакшы промптту ЖИ өзү жазат</span></p>
+        <div class="steps">
+          <span class="stp rise" style="--d:.4s"><span class="num">1</span><span data-l="ru">Спроси меня</span><span data-l="ky">Менден сура</span></span>
+          <span class="stp on rise" style="--d:.5s"><span class="num">2</span><span data-l="ru">Напиши промпт</span><span data-l="ky">Промпт жаз</span></span>
+          <span class="stp on rise" style="--d:.6s"><span class="num">3</span><span data-l="ru">Сделай</span><span data-l="ky">Жаса</span></span>
+        </div>
+      </div>
+      <svg class="ill" viewBox="0 0 860 720">
+        <g class="rise" style="--d:.2s">
+          <rect x="20" y="20" width="820" height="680" rx="32" fill="#fff" filter="url(#sh)"/>
+          <path d="M20 84 H840" stroke="#f1efe9" stroke-width="3"/>
+          <circle cx="60" cy="52" r="9" fill="#ff7a59"/><circle cx="88" cy="52" r="9" fill="#ffb020"/><circle cx="116" cy="52" r="9" fill="#16c49a"/>
+        </g>
+        <g class="from-r" style="--d:.4s">
+          <rect x="300" y="106" width="520" height="100" rx="26" fill="#5b6cff"/>
+          <g font-size="25" font-weight="700" fill="#fff">
+            <text x="330" y="148" data-l="ru">Теперь по моим ответам</text>
+            <text x="330" y="182" data-l="ru">напиши хороший промпт</text>
+            <text x="330" y="148" data-l="ky">Эми жоопторум боюнча</text>
+            <text x="330" y="182" data-l="ky">жакшы промпт жазып бер</text>
+          </g>
+        </g>
+        <rect class="pop" style="--d:1.1s" x="50" y="230" width="640" height="252" rx="26" fill="#f1efe9"/>
+        <text class="fade" style="--d:1.3s" x="80" y="276" font-size="25" font-weight="800" fill="#1c1e27">✨ Промпт:</text>
+        <g class="pop" style="--d:1.5s"><rect x="80" y="298" width="140" height="34" rx="17" fill="#5b6cff"/><text x="150" y="321" font-size="18" font-weight="800" fill="#fff" text-anchor="middle" data-l="ru">Цель</text><text x="150" y="321" font-size="18" font-weight="800" fill="#fff" text-anchor="middle" data-l="ky">Максат</text></g>
+        <rect class="grow-x" style="--d:1.6s" x="236" y="308" width="380" height="16" rx="8" fill="#c3c9ff"/>
+        <g class="pop" style="--d:1.8s"><rect x="80" y="344" width="140" height="34" rx="17" fill="#16c49a"/><text x="150" y="367" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">Контекст</text></g>
+        <rect class="grow-x" style="--d:1.9s" x="236" y="354" width="430" height="16" rx="8" fill="#a8ead6"/>
+        <g class="pop" style="--d:2.1s"><rect x="80" y="390" width="140" height="34" rx="17" fill="#ffb020"/><text x="150" y="413" font-size="18" font-weight="800" fill="#fff" text-anchor="middle" data-l="ru">Пример</text><text x="150" y="413" font-size="18" font-weight="800" fill="#fff" text-anchor="middle" data-l="ky">Мисал</text></g>
+        <rect class="grow-x" style="--d:2.2s" x="236" y="400" width="300" height="16" rx="8" fill="#ffdc94"/>
+        <g class="pop" style="--d:2.4s"><rect x="80" y="436" width="140" height="34" rx="17" fill="#ff5fa2"/><text x="150" y="459" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">Формат</text></g>
+        <rect class="grow-x" style="--d:2.5s" x="236" y="446" width="340" height="16" rx="8" fill="#ffc1dc"/>
+
+        <g class="from-r" style="--d:3s">
+          <rect x="500" y="508" width="320" height="64" rx="26" fill="#5b6cff"/>
+          <text x="660" y="549" font-size="25" font-weight="700" fill="#fff" text-anchor="middle" data-l="ru">Отлично, сделай!</text>
+          <text x="660" y="549" font-size="25" font-weight="700" fill="#fff" text-anchor="middle" data-l="ky">Сонун, жаса!</text>
+        </g>
+        <g class="pop" style="--d:3.7s">
+          <rect x="50" y="596" width="500" height="88" rx="22" fill="#e3f7f1"/>
+          <text x="78" y="650" font-size="25" font-weight="800" fill="#0f8f70" data-l="ru">✅ Готово: сайт-меню</text>
+          <text x="78" y="650" font-size="25" font-weight="800" fill="#0f8f70" data-l="ky">✅ Даяр: сайт-меню</text>
+          <text x="420" y="652" font-size="32">🍲🥟🍵</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 7. Три фразы -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 6px">
+      <span data-l="ru">3 <span class="hl">волшебные</span> фразы</span>
+      <span data-l="ky">3 <span class="hl">сыйкырдуу</span> сүйлөм</span>
+    </h2>
+    <div class="flow three">
+      <div class="card pop" style="--d:.3s"><span class="icon float">🙋</span>
+        <div class="quote">«<span data-l="ru">Задай мне вопросы, чтобы понять задачу</span><span data-l="ky">Тапшырманы түшүнүү үчүн мага суроо бер</span>»</div></div>
+      <span class="arr pop" style="--d:.7s">→</span>
+      <div class="card pop" style="--d:.9s"><span class="icon float" style="--fd:.5s">✍️</span>
+        <div class="quote">«<span data-l="ru">Напиши по моим ответам хороший промпт</span><span data-l="ky">Жоопторум боюнча жакшы промпт жаз</span>»</div></div>
+      <span class="arr pop" style="--d:1.3s">→</span>
+      <div class="card pop" style="--d:1.5s"><span class="icon float" style="--fd:1s">🚀</span>
+        <div class="quote">«<span data-l="ru">Выполни этот промпт</span><span data-l="ky">Ушул промптту аткар</span>»</div></div>
+    </div>
+  </section>
+
+  <!-- 8. Шаблон -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 6px">
+      <span data-l="ru">Шаблон — <span class="hl">копируйте</span></span>
+      <span data-l="ky">Шаблон — <span class="hl">көчүрүп алыңыз</span></span>
+    </h2>
+    <div class="tpl rise" style="--d:.2s">
+      <span data-l="ru">Сделай <span class="ph pop" style="--d:.6s;background:#e9ebff;color:#3d4bd6">сайт-меню для кафе</span>.
+        Его откроют <span class="ph pop" style="--d:.9s;background:#e3f7f1;color:#0f8f70">гости с телефона</span>,
+        главное — <span class="ph pop" style="--d:1.1s;background:#e3f7f1;color:#0f8f70">быстро заказать</span>.
+        Пример: <span class="ph pop" style="--d:1.4s;background:#fff3d6;color:#b8770a">скрин</span>.
+        Ответ: <span class="ph pop" style="--d:1.7s;background:#ffe6f1;color:#d63384">код одним файлом</span>.
+        Готово, если <span class="ph pop" style="--d:2s;background:#efe8ff;color:#6d4bd6">есть корзина</span>.
+        Сначала <span class="ph pop" style="--d:2.3s;background:#f1efe9;color:#1c1e27">задай вопросы и покажи план</span>.</span>
+      <span data-l="ky"><span class="ph pop" style="--d:.6s;background:#e9ebff;color:#3d4bd6">Кафе үчүн сайт-меню</span> жаса.
+        Аны <span class="ph pop" style="--d:.9s;background:#e3f7f1;color:#0f8f70">коноктор телефондон</span> ачат,
+        эң негизгиси — <span class="ph pop" style="--d:1.1s;background:#e3f7f1;color:#0f8f70">тез заказ берүү</span>.
+        Мисал: <span class="ph pop" style="--d:1.4s;background:#fff3d6;color:#b8770a">скрин</span>.
+        Жооп: <span class="ph pop" style="--d:1.7s;background:#ffe6f1;color:#d63384">бир файлдагы код</span>.
+        Даяр, эгер <span class="ph pop" style="--d:2s;background:#efe8ff;color:#6d4bd6">себет болсо</span>.
+        Адегенде <span class="ph pop" style="--d:2.3s;background:#f1efe9;color:#1c1e27">суроо берип, планды көрсөт</span>.</span>
+    </div>
+    <p class="sub rise" style="--d:2.7s;margin:24px 0 0">🖍️ <span data-l="ru">Цветное — меняйте на своё</span><span data-l="ky">Түстүүсүн өзүңүздүкүнө алмаштырыңыз</span></p>
+  </section>
+
+  <!-- 9. Уточняйте -->
+  <section class="slide">
+    <div class="sec">
+      <div>
+        <h2 class="rise" style="margin-bottom:14px"><span data-l="ru">Не то? Уточняйте</span><span data-l="ky">Туура эмес? Тактаңыз</span></h2>
+        <p class="sub rise" style="--d:.15s;margin:0"><span data-l="ru">Не начинайте чат заново</span><span data-l="ky">Чатты кайра баштабаңыз</span></p>
+        <div class="pop" style="--d:.3s;margin-top:40px"><span class="spin" style="display:inline-block;font-size:150px;line-height:1;animation-duration:8s">🔁</span></div>
+      </div>
+      <div class="bubs">
+        <span class="bub from-r" style="--d:.5s"><span data-l="ru">Короче</span><span data-l="ky">Кыскараак</span></span>
+        <span class="bub from-r" style="--d:.8s"><span data-l="ru">Проще, я новичок</span><span data-l="ky">Жөнөкөйрөөк, мен жаңы баштадым</span></span>
+        <span class="bub from-r" style="--d:1.1s"><span data-l="ru">Покажи 3 варианта</span><span data-l="ky">3 вариант көрсөт</span></span>
+        <span class="bub from-r" style="--d:1.4s"><span data-l="ru">Исправь только кнопку</span><span data-l="ky">Баскычты гана оңдо</span></span>
+        <span class="bub from-r" style="--d:1.7s"><span data-l="ru">Что тебе непонятно?</span><span data-l="ky">Сага эмне түшүнүксүз?</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9а. Дизайн-промптинг: что это -->
+  <section class="slide">
+    <div class="sec">
+      <div>
+        <div class="kicker rise">🆕 <span data-l="ru">Новое направление</span><span data-l="ky">Жаңы багыт</span></div>
+        <h2 class="rise" style="--d:.15s;margin-bottom:14px"><span data-l="ru">Дизайн-<span class="hl">промптинг</span></span><span data-l="ky">Дизайн-<span class="hl">промптинг</span></span></h2>
+        <p class="sub rise" style="--d:.25s;margin:0"><span data-l="ru">Дайте ИИ дизайн — он соберёт приложение почти целиком</span><span data-l="ky">ЖИге дизайнды бериңиз — ал колдонмону дээрлик толук курат</span></p>
+        <div class="tags">
+          <span class="tag rise" style="--d:.5s"><span class="e">🎨</span><span data-l="ru">Дизайн</span><span data-l="ky">Дизайн</span></span>
+          <span class="tag rise" style="--d:.65s"><span class="e">🎯</span><span data-l="ru">Что делает</span><span data-l="ky">Эмне кылат</span></span>
+          <span class="tag rise" style="--d:.8s"><span class="e">🧱</span><span data-l="ru">Стек</span><span data-l="ky">Стек</span></span>
+        </div>
+      </div>
+      <svg class="ill" viewBox="0 0 860 720">
+        <!-- Макеты экранов -->
+        <g transform="translate(40,170) rotate(-8)"><g class="rise" style="--d:.3s">
+          <rect width="160" height="310" rx="24" fill="#fff" stroke="#e7e3dc" stroke-width="3" filter="url(#sh)"/>
+          <rect x="16" y="20" width="128" height="22" rx="8" fill="#e9ebff"/>
+          <rect x="16" y="56" width="128" height="70" rx="12" fill="#f1efe9"/>
+          <rect x="16" y="138" width="128" height="70" rx="12" fill="#f1efe9"/>
+          <rect x="16" y="256" width="128" height="34" rx="17" fill="#c3c9ff"/>
+        </g></g>
+        <g transform="translate(110,200) rotate(4)"><g class="rise" style="--d:.45s">
+          <rect width="160" height="310" rx="24" fill="#fff" stroke="#e7e3dc" stroke-width="3" filter="url(#sh)"/>
+          <circle cx="80" cy="60" r="30" fill="#e3f7f1"/>
+          <rect x="30" y="104" width="100" height="14" rx="7" fill="#d9d6cf"/>
+          <rect x="16" y="140" width="128" height="40" rx="12" fill="#f1efe9"/>
+          <rect x="16" y="190" width="128" height="40" rx="12" fill="#f1efe9"/>
+          <rect x="16" y="256" width="128" height="34" rx="17" fill="#a8ead6"/>
+        </g></g>
+        <text class="rise" style="--d:.6s" x="190" y="590" font-size="26" font-weight="800" fill="#6c7080" text-anchor="middle" data-l="ru">Дизайн</text>
+        <text class="rise" style="--d:.6s" x="190" y="590" font-size="26" font-weight="800" fill="#6c7080" text-anchor="middle" data-l="ky">Дизайн</text>
+
+        <!-- ИИ собирает -->
+        <path class="draw" pathLength="1" style="--d:.9s;--t:.7s" d="M300 360 C 360 360, 380 360, 440 360" fill="none" stroke="#5b6cff" stroke-width="6" stroke-linecap="round"/>
+        <g transform="translate(400,360)"><g class="pop" style="--d:1.2s">
+          <circle r="48" fill="#5b6cff"/>
+          <text class="spin" y="17" font-size="46" text-anchor="middle">✨</text>
+        </g></g>
+        <path class="draw" pathLength="1" style="--d:1.4s;--t:.6s" d="M450 360 H520" fill="none" stroke="#5b6cff" stroke-width="6" stroke-linecap="round"/>
+
+        <!-- Готовое приложение -->
+        <g transform="translate(530,150)"><g class="pop" style="--d:1.8s"><g class="float">
+          <rect width="230" height="440" rx="36" fill="#1c1e27" filter="url(#sh)"/>
+          <rect x="10" y="10" width="210" height="420" rx="28" fill="#fff"/>
+          <rect x="10" y="10" width="210" height="76" rx="28" fill="#5b6cff"/><rect x="10" y="56" width="210" height="30" fill="#5b6cff"/>
+          <rect x="30" y="38" width="110" height="16" rx="8" fill="#fff" opacity=".9"/>
+          <g class="rise" style="--d:2.1s"><rect x="26" y="104" width="178" height="74" rx="16" fill="#fff3e8"/><circle cx="60" cy="141" r="20" fill="#ffd3b0"/><rect x="92" y="128" width="96" height="12" rx="6" fill="#ffb37a"/><rect x="92" y="148" width="64" height="12" rx="6" fill="#ffd9bd"/></g>
+          <g class="rise" style="--d:2.25s"><rect x="26" y="190" width="178" height="74" rx="16" fill="#e3f7f1"/><circle cx="60" cy="227" r="20" fill="#a8ead6"/><rect x="92" y="214" width="96" height="12" rx="6" fill="#16c49a"/><rect x="92" y="234" width="64" height="12" rx="6" fill="#a8ead6"/></g>
+          <g class="rise" style="--d:2.4s"><rect x="26" y="276" width="178" height="74" rx="16" fill="#eef0ff"/><circle cx="60" cy="313" r="20" fill="#c3c9ff"/><rect x="92" y="300" width="96" height="12" rx="6" fill="#5b6cff"/><rect x="92" y="320" width="64" height="12" rx="6" fill="#c3c9ff"/></g>
+          <rect x="26" y="368" width="178" height="44" rx="22" fill="#5b6cff"/>
+        </g></g></g>
+        <g transform="translate(770,150)"><g class="pop" style="--d:2.7s">
+          <circle r="58" fill="#16c49a"/>
+          <text y="12" font-size="34" font-weight="800" fill="#fff" text-anchor="middle">≈95%</text>
+        </g></g>
+        <text class="rise" style="--d:2s" x="645" y="640" font-size="26" font-weight="800" fill="#6c7080" text-anchor="middle" data-l="ru">Готовое приложение</text>
+        <text class="rise" style="--d:2s" x="645" y="640" font-size="26" font-weight="800" fill="#6c7080" text-anchor="middle" data-l="ky">Даяр колдонмо</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 9б. Дизайн-промптинг: что дать ИИ -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 6px">
+      <span data-l="ru">Что дать ИИ — <span class="hl">4 вещи</span></span>
+      <span data-l="ky">ЖИге эмне берүү керек — <span class="hl">4 нерсе</span></span>
+    </h2>
+    <div class="tips">
+      <div class="tip pop" style="--d:.3s"><span class="ic float">🎨</span><div>
+        <div class="lbl"><span data-l="ru">Дизайн экранов</span><span data-l="ky">Экрандардын дизайны</span></div>
+        <div class="ex">«<span data-l="ru">Макет в Figma, скрин или рисунок от руки</span><span data-l="ky">Figma'дагы макет, скрин же колго тартылган сүрөт</span>»</div></div></div>
+      <div class="tip pop" style="--d:.6s"><span class="ic float" style="--fd:.4s">🎯</span><div>
+        <div class="lbl"><span data-l="ru">Что делает</span><span data-l="ky">Эмне кылат</span></div>
+        <div class="ex">«<span data-l="ru">Клиент выбирает время, мастер видит записи</span><span data-l="ky">Кардар убакыт тандайт, чебер жазылууларды көрөт</span>»</div></div></div>
+      <div class="tip pop" style="--d:.9s"><span class="ic float" style="--fd:.8s">🧱</span><div>
+        <div class="lbl"><span data-l="ru">Стек</span><span data-l="ky">Стек</span></div>
+        <div class="ex">«<span data-l="ru">Flutter + Supabase</span><span data-l="ky">Flutter + Supabase</span>»</div></div></div>
+      <div class="tip pop" style="--d:1.2s"><span class="ic float" style="--fd:1.2s">🗂️</span><div>
+        <div class="lbl"><span data-l="ru">Экраны и данные</span><span data-l="ky">Экрандар жана маалымат</span></div>
+        <div class="ex">«<span data-l="ru">Вход, список, запись, профиль</span><span data-l="ky">Кирүү, тизме, жазылуу, профиль</span>»</div></div></div>
+    </div>
+    <div class="note pop" style="--d:1.7s">✅ <span data-l="ru">≈95% с первого раза — остальное правим уточнениями</span><span data-l="ky">≈95% биринчи жолудан — калганын тактоо менен оңдойбуз</span></div>
+  </section>
+
+  <!-- 9в. Дизайн-промптинг: шаблон -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 6px">
+      <span data-l="ru">Промпт <span class="hl">по дизайну</span></span>
+      <span data-l="ky"><span class="hl">Дизайн боюнча</span> промпт</span>
+    </h2>
+    <div class="tpl rise" style="--d:.2s">
+      <span data-l="ru">Вот дизайн моего приложения: <span class="ph pop" style="--d:.6s;background:#fff3d6;color:#b8770a">картинки экранов</span>.
+        Сделай точно по дизайну. Приложение — <span class="ph pop" style="--d:.9s;background:#e9ebff;color:#3d4bd6">запись к мастеру: клиент выбирает время, мастер видит записи</span>.
+        Стек: <span class="ph pop" style="--d:1.2s;background:#e3f7f1;color:#0f8f70">Flutter + Supabase</span>.
+        Экраны: <span class="ph pop" style="--d:1.5s;background:#ffe6f1;color:#d63384">вход, список, запись, профиль</span>.
+        Сначала <span class="ph pop" style="--d:1.8s;background:#f1efe9;color:#1c1e27">покажи план, потом делай по одному экрану</span>.</span>
+      <span data-l="ky">Мына менин колдонмомдун дизайны: <span class="ph pop" style="--d:.6s;background:#fff3d6;color:#b8770a">экрандардын сүрөттөрү</span>.
+        Так дизайн боюнча жаса. Колдонмо — <span class="ph pop" style="--d:.9s;background:#e9ebff;color:#3d4bd6">чеберге жазылуу: кардар убакыт тандайт, чебер жазылууларды көрөт</span>.
+        Стек: <span class="ph pop" style="--d:1.2s;background:#e3f7f1;color:#0f8f70">Flutter + Supabase</span>.
+        Экрандар: <span class="ph pop" style="--d:1.5s;background:#ffe6f1;color:#d63384">кирүү, тизме, жазылуу, профиль</span>.
+        Адегенде <span class="ph pop" style="--d:1.8s;background:#f1efe9;color:#1c1e27">планды көрсөт, анан бир-бир экрандан жаса</span>.</span>
+    </div>
+    <div class="bubs" style="justify-items:start;margin-top:26px;grid-template-columns:auto auto;gap:16px">
+      <span class="bub from-l" style="--d:2.3s"><span data-l="ru">Цвет кнопки — как на макете</span><span data-l="ky">Баскычтын түсү — макеттегидей</span></span>
+      <span class="bub from-l" style="--d:2.5s"><span data-l="ru">Отступы — как на картинке</span><span data-l="ky">Аралыктар — сүрөттөгүдөй</span></span>
+    </div>
+  </section>
+
+  <div class="counter"></div>
+  <div class="progress"></div>
+</div>
+
+<script src="deck.js"></script>
+</body>
+</html>

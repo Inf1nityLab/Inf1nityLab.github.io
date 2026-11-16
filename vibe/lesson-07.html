@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок 7 · Что такое ТЗ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<!-- Кыргызский текст — черновой перевод, проверить носителем языка перед записью.
+     Урок 7 — теория: что такое ТЗ, рассказ без показа. Пишем ТЗ с ИИ — урок 8, user flow — урок 9, PLAN.md — урок 10. -->
+
+<div class="controls">
+  <button data-set-lang="ru">RU</button>
+  <button data-set-lang="ky">KY</button>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#1c1e27" flood-opacity=".10"/>
+    </filter>
+    <symbol id="cursor" viewBox="0 0 26 36">
+      <path d="M2 2 L2 28 L9 22 L14 34 L19 32 L14 20 L24 20 Z" fill="#1c1e27" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+    </symbol>
+    <pattern id="grid13" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#d7defb" stroke-width="2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<div class="stage">
+
+  <!-- 1. Титул -->
+  <section class="slide">
+    <div class="sec">
+      <div>
+        <div class="kicker rise">📋 <span data-l="ru">Урок 7</span><span data-l="ky">7-сабак</span></div>
+        <h1 class="rise" style="--d:.15s;font-size:124px">
+          <span data-l="ru">Что такое <span class="hl">ТЗ</span></span>
+          <span data-l="ky"><span class="hl">ТЗ</span> деген эмне</span>
+        </h1>
+        <p class="sub rise" style="--d:.3s"><span data-l="ru">Чертёж электронного меню</span><span data-l="ky">Электрондук менюнун чиймеси</span></p>
+      </div>
+      <svg class="ill" viewBox="0 0 860 720">
+        <!-- Лист-чертёж -->
+        <g class="rise" style="--d:.1s">
+          <rect x="40" y="60" width="560" height="600" rx="24" fill="#eef2ff" filter="url(#sh)"/>
+          <rect x="40" y="60" width="560" height="600" rx="24" fill="url(#grid13)"/>
+        </g>
+        <!-- Экран рисуется по линиям -->
+        <g fill="none" stroke="#5b6cff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path class="draw" pathLength="1" style="--d:.4s;--t:.8s" d="M200 130 H440 Q470 130 470 160 V580 Q470 610 440 610 H200 Q170 610 170 580 V160 Q170 130 200 130 Z"/>
+          <path class="draw" pathLength="1" style="--d:1s;--t:.3s" d="M200 186 H440"/>
+          <path class="draw" pathLength="1" style="--d:1.2s;--t:.5s" d="M200 214 H440 V330 H200 Z M200 214 L440 330 M440 214 L200 330"/>
+          <path class="draw" pathLength="1" style="--d:1.5s;--t:.4s" d="M200 360 H310 V460 H200 Z"/>
+          <path class="draw" pathLength="1" style="--d:1.65s;--t:.4s" d="M330 360 H440 V460 H330 Z"/>
+          <path class="draw" pathLength="1" style="--d:1.8s;--t:.4s" d="M200 520 H440 V566 H200 Z"/>
+        </g>
+        <!-- Размеры, как на чертеже -->
+        <g class="fade" style="--d:2s" stroke="#9aa6e8" stroke-width="3" fill="none">
+          <path d="M120 130 V610 M110 130 H130 M110 610 H130"/>
+        </g>
+        <!-- ТЗ.md с галочками -->
+        <g class="rise" style="--d:1.9s">
+          <rect x="520" y="190" width="310" height="380" rx="24" fill="#fff" filter="url(#sh)"/>
+          <text x="552" y="246" font-size="30" font-weight="800" fill="#1c1e27">ТЗ.md</text>
+        </g>
+        <g class="fade" style="--d:2.1s" fill="none" stroke="#c9c6bf" stroke-width="3">
+          <rect x="552" y="284" width="26" height="26" rx="7"/><rect x="552" y="340" width="26" height="26" rx="7"/>
+          <rect x="552" y="396" width="26" height="26" rx="7"/><rect x="552" y="452" width="26" height="26" rx="7"/>
+          <rect x="552" y="508" width="26" height="26" rx="7"/>
+        </g>
+        <rect class="grow-x" style="--d:2.2s" x="596" y="290" width="190" height="14" rx="7" fill="#e7e3dc"/>
+        <rect class="grow-x" style="--d:2.3s" x="596" y="346" width="160" height="14" rx="7" fill="#e7e3dc"/>
+        <rect class="grow-x" style="--d:2.4s" x="596" y="402" width="200" height="14" rx="7" fill="#e7e3dc"/>
+        <rect class="grow-x" style="--d:2.5s" x="596" y="458" width="140" height="14" rx="7" fill="#e7e3dc"/>
+        <rect class="grow-x" style="--d:2.6s" x="596" y="514" width="176" height="14" rx="7" fill="#e7e3dc"/>
+        <g fill="none" stroke="#16c49a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path class="draw" pathLength="1" style="--d:2.8s;--t:.25s" d="M557 297 L563 304 L574 290"/>
+          <path class="draw" pathLength="1" style="--d:3.05s;--t:.25s" d="M557 353 L563 360 L574 346"/>
+          <path class="draw" pathLength="1" style="--d:3.3s;--t:.25s" d="M557 409 L563 416 L574 402"/>
+          <path class="draw" pathLength="1" style="--d:3.55s;--t:.25s" d="M557 465 L563 472 L574 458"/>
+          <path class="draw" pathLength="1" style="--d:3.8s;--t:.25s" d="M557 521 L563 528 L574 514"/>
+        </g>
+        <g transform="translate(812,196)"><g class="pop" style="--d:4s"><text class="float" font-size="50" text-anchor="middle">✨</text></g></g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 2. ТЗ — это чертёж -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 10px">
+      <span data-l="ru">ТЗ — это <span class="hl">чертёж</span></span>
+      <span data-l="ky">ТЗ — бул <span class="hl">чийме</span></span>
+    </h2>
+    <div class="vs">
+      <div class="vcard bad from-l" style="--d:.3s">
+        <div class="vhead">❌ <span data-l="ru">Без ТЗ</span><span data-l="ky">ТЗсыз</span></div>
+        <div class="pbub">«<span data-l="ru">Сделай меню для кафе</span><span data-l="ky">Кафеге меню жаса</span>»</div>
+        <div class="vdown">↓</div>
+        <svg viewBox="0 0 700 290" width="100%" style="display:block">
+          <g class="pop" style="--d:1s">
+            <rect x="50" y="30" width="160" height="220" rx="22" fill="#fff" stroke="#d9d6cf" stroke-width="3"/>
+            <rect x="68" y="50" width="124" height="80" rx="12" fill="#ffd2c4"/>
+            <rect x="68" y="144" width="124" height="14" rx="7" fill="#e7e3dc"/><rect x="68" y="168" width="90" height="14" rx="7" fill="#e7e3dc"/>
+            <rect x="68" y="204" width="124" height="28" rx="14" fill="#ff7a59"/>
+          </g>
+          <g class="pop" style="--d:1.3s">
+            <rect x="270" y="30" width="160" height="220" rx="22" fill="#fff" stroke="#d9d6cf" stroke-width="3"/>
+            <rect x="288" y="50" width="124" height="16" rx="8" fill="#2b2d38"/>
+            <rect x="288" y="80" width="124" height="30" rx="8" fill="#e7e3dc"/><rect x="288" y="118" width="124" height="30" rx="8" fill="#e7e3dc"/>
+            <rect x="288" y="156" width="124" height="30" rx="8" fill="#e7e3dc"/><rect x="288" y="194" width="124" height="30" rx="8" fill="#e7e3dc"/>
+          </g>
+          <g class="pop" style="--d:1.6s">
+            <rect x="490" y="30" width="160" height="220" rx="22" fill="#fff" stroke="#d9d6cf" stroke-width="3"/>
+            <rect x="508" y="50" width="58" height="80" rx="10" fill="#ffe7a8"/><rect x="574" y="50" width="58" height="80" rx="10" fill="#bfe3ff"/>
+            <rect x="508" y="138" width="58" height="80" rx="10" fill="#c9f1e4"/><rect x="574" y="138" width="58" height="80" rx="10" fill="#e9ddff"/>
+          </g>
+          <g font-size="52" font-weight="800" fill="#c9c6bf" text-anchor="middle">
+            <g transform="translate(130,40)"><g class="pop" style="--d:1.9s"><text class="wiggle">?</text></g></g>
+            <g transform="translate(350,40)"><g class="pop" style="--d:2s"><text class="wiggle">?</text></g></g>
+            <g transform="translate(570,40)"><g class="pop" style="--d:2.1s"><text class="wiggle">?</text></g></g>
+          </g>
+          <text class="fade" style="--d:2.3s" x="350" y="282" font-size="26" font-weight="800" fill="#6c7080" text-anchor="middle" data-l="ru">🎲 каждый раз по-разному</text>
+          <text class="fade" style="--d:2.3s" x="350" y="282" font-size="26" font-weight="800" fill="#6c7080" text-anchor="middle" data-l="ky">🎲 ар бир жолу башкача</text>
+        </svg>
+      </div>
+      <div class="vcard good from-r" style="--d:.5s">
+        <div class="vhead">✅ <span data-l="ru">С ТЗ</span><span data-l="ky">ТЗ менен</span></div>
+        <div class="pbub">«<span data-l="ru">Сделай по ТЗ.md</span><span data-l="ky">ТЗ.md боюнча жаса</span>»</div>
+        <div class="vdown">↓</div>
+        <svg viewBox="0 0 700 290" width="100%" style="display:block">
+          <g class="pop" style="--d:1s">
+            <rect x="70" y="40" width="170" height="210" rx="18" fill="#fff" stroke="#d9d6cf" stroke-width="3"/>
+            <text x="92" y="82" font-size="24" font-weight="800" fill="#1c1e27">ТЗ.md</text>
+            <rect x="92" y="104" width="120" height="10" rx="5" fill="#5b6cff"/>
+            <rect x="92" y="128" width="126" height="10" rx="5" fill="#e7e3dc"/><rect x="92" y="148" width="100" height="10" rx="5" fill="#e7e3dc"/>
+            <rect x="92" y="176" width="90" height="10" rx="5" fill="#16c49a"/>
+            <rect x="92" y="200" width="126" height="10" rx="5" fill="#e7e3dc"/><rect x="92" y="220" width="80" height="10" rx="5" fill="#e7e3dc"/>
+          </g>
+          <path class="draw" pathLength="1" style="--d:1.5s;--t:.5s" d="M270 145 H380" fill="none" stroke="#9aa0ad" stroke-width="6" stroke-linecap="round"/>
+          <path class="pop" style="--d:1.9s" d="M366 130 L384 145 L366 160" fill="none" stroke="#9aa0ad" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <g class="rise" style="--d:2s">
+            <rect x="420" y="30" width="160" height="220" rx="22" fill="#fff" stroke="#16c49a" stroke-width="3"/>
+            <rect x="438" y="50" width="124" height="16" rx="8" fill="#5b6cff"/>
+            <rect x="438" y="78" width="124" height="66" rx="12" fill="#ffe9d6"/>
+            <rect x="438" y="154" width="58" height="48" rx="10" fill="#e3f7f1"/><rect x="504" y="154" width="58" height="48" rx="10" fill="#eef0ff"/>
+            <rect x="438" y="212" width="124" height="24" rx="12" fill="#5b6cff"/>
+          </g>
+          <g transform="translate(612,72)"><g class="pop" style="--d:2.5s"><text font-size="48" text-anchor="middle">✅</text></g></g>
+          <text class="fade" style="--d:2.7s" x="350" y="282" font-size="26" font-weight="800" fill="#0f8f70" text-anchor="middle" data-l="ru">🎯 точно как задумали</text>
+          <text class="fade" style="--d:2.7s" x="350" y="282" font-size="26" font-weight="800" fill="#0f8f70" text-anchor="middle" data-l="ky">🎯 так ойлогондой</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Из чего состоит ТЗ: пункты 1–7 -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 26px">
+      <span data-l="ru">Из чего <span class="hl">состоит ТЗ</span> · 1–7</span>
+      <span data-l="ky">ТЗ <span class="hl">эмнеден турат</span> · 1–7</span>
+    </h2>
+    <div class="ways" style="grid-template-columns:repeat(4,1fr)">
+      <div class="way pop" style="--d:0.30s;min-height:200px"><span class="n" style="background:#5b6cff">1</span>
+        <span class="ic float" style="--fd:0.0s">🎯</span>
+        <div class="lbl"><span data-l="ru">Название и цель</span><span data-l="ky">Аталышы жана максаты</span></div>
+        <div class="q"><span data-l="ru">Меню на телефоне: заказ без ожидания</span><span data-l="ky">Телефондогу меню: күтпөй буйрутма</span></div></div>
+      <div class="way pop" style="--d:0.42s;min-height:200px"><span class="n" style="background:#ff7a59">2</span>
+        <span class="ic float" style="--fd:0.4s">🔎</span>
+        <div class="lbl"><span data-l="ru">Проблема и исследование</span><span data-l="ky">Көйгөй жана изилдөө</span></div>
+        <div class="q"><span data-l="ru">Гости долго ждут официанта</span><span data-l="ky">Коноктор официантты көпкө күтөт</span></div></div>
+      <div class="way pop" style="--d:0.54s;min-height:200px"><span class="n" style="background:#ffb020">3</span>
+        <span class="ic float" style="--fd:0.8s">👥</span>
+        <div class="lbl"><span data-l="ru">Пользователи и роли</span><span data-l="ky">Колдонуучулар жана ролдор</span></div>
+        <div class="q"><span data-l="ru">Гость, кухня, официант, владелец</span><span data-l="ky">Конок, ашкана, официант, ээси</span></div></div>
+      <div class="way pop" style="--d:0.66s;min-height:200px"><span class="n" style="background:#16c49a">4</span>
+        <span class="ic float" style="--fd:1.2s">⚙️</span>
+        <div class="lbl"><span data-l="ru">Функции: сейчас и потом</span><span data-l="ky">Функциялар: азыр жана кийин</span></div>
+        <div class="q"><span data-l="ru">Версия 1 — меню и корзина</span><span data-l="ky">1-версия — меню жана себет</span></div></div>
+      <div class="way pop" style="--d:0.78s;min-height:200px"><span class="n" style="background:#9b6bff">5</span>
+        <span class="ic float" style="--fd:1.6s">🧭</span>
+        <div class="lbl"><span data-l="ru">Сценарии</span><span data-l="ky">Сценарийлер</span></div>
+        <div class="q"><span data-l="ru">QR → меню → заказ → кухня</span><span data-l="ky">QR → меню → буйрутма → ашкана</span></div></div>
+      <div class="way pop" style="--d:0.90s;min-height:200px"><span class="n" style="background:#e5484d">6</span>
+        <span class="ic float" style="--fd:2.0s">📱</span>
+        <div class="lbl"><span data-l="ru">Экраны</span><span data-l="ky">Экрандар</span></div>
+        <div class="q"><span data-l="ru">Меню, корзина, заказ</span><span data-l="ky">Меню, себет, буйрутма</span></div></div>
+      <div class="way pop" style="--d:1.02s;min-height:200px"><span class="n" style="background:#38a3ff">7</span>
+        <span class="ic float" style="--fd:2.4s">🗂️</span>
+        <div class="lbl"><span data-l="ru">Данные и доступ</span><span data-l="ky">Маалымат жана кирүү укугу</span></div>
+        <div class="q"><span data-l="ru">Блюда, заказы · кто что видит</span><span data-l="ky">Тамактар, буйрутмалар · ким эмнени көрөт</span></div></div>
+    </div>
+  </section>
+
+  <!-- 4. Из чего состоит ТЗ: пункты 8–14 -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 26px">
+      <span data-l="ru">Из чего <span class="hl">состоит ТЗ</span> · 8–14</span>
+      <span data-l="ky">ТЗ <span class="hl">эмнеден турат</span> · 8–14</span>
+    </h2>
+    <div class="ways" style="grid-template-columns:repeat(4,1fr)">
+      <div class="way pop" style="--d:0.30s;min-height:200px"><span class="n" style="background:#5b6cff">8</span>
+        <span class="ic float" style="--fd:0.0s">🎨</span>
+        <div class="lbl"><span data-l="ru">Дизайн</span><span data-l="ky">Дизайн</span></div>
+        <div class="q"><span data-l="ru">Цвета и примеры · уроки 12–17</span><span data-l="ky">Түстөр жана мисалдар · 12–17-сабактар</span></div></div>
+      <div class="way pop" style="--d:0.42s;min-height:200px"><span class="n" style="background:#ff7a59">9</span>
+        <span class="ic float" style="--fd:0.4s">🧩</span>
+        <div class="lbl"><span data-l="ru">Технологии</span><span data-l="ky">Технологиялар</span></div>
+        <div class="q"><span data-l="ru">ИИ подскажет · урок 11</span><span data-l="ky">ЖИ сунуштайт · 11-сабак</span></div></div>
+      <div class="way pop" style="--d:0.54s;min-height:200px"><span class="n" style="background:#ffb020">10</span>
+        <span class="ic float" style="--fd:0.8s">🔌</span>
+        <div class="lbl"><span data-l="ru">Интеграции</span><span data-l="ky">Интеграциялар</span></div>
+        <div class="q"><span data-l="ru">Telegram, оплата банка</span><span data-l="ky">Telegram, банк аркылуу төлөм</span></div></div>
+      <div class="way pop" style="--d:0.66s;min-height:200px"><span class="n" style="background:#16c49a">11</span>
+        <span class="ic float" style="--fd:1.2s">📏</span>
+        <div class="lbl"><span data-l="ru">Требования</span><span data-l="ky">Талаптар</span></div>
+        <div class="q"><span data-l="ru">2 языка, быстро, телефон, защита</span><span data-l="ky">2 тил, тез, телефон, коргоо</span></div></div>
+      <div class="way pop" style="--d:0.78s;min-height:200px"><span class="n" style="background:#9b6bff">12</span>
+        <span class="ic float" style="--fd:1.6s">🚧</span>
+        <div class="lbl"><span data-l="ru">Ограничения и «не делаем»</span><span data-l="ky">Чектөөлөр жана «жасабайбыз»</span></div>
+        <div class="q"><span data-l="ru">Пока без доставки</span><span data-l="ky">Азырынча жеткирүүсүз</span></div></div>
+      <div class="way pop" style="--d:0.90s;min-height:200px"><span class="n" style="background:#e5484d">13</span>
+        <span class="ic float" style="--fd:2.0s">✅</span>
+        <div class="lbl"><span data-l="ru">Готово, если…</span><span data-l="ky">Даяр, эгерде…</span></div>
+        <div class="q"><span data-l="ru">Гость заказал за 1 минуту</span><span data-l="ky">Конок 1 мүнөттө буйрутма берди</span></div></div>
+      <div class="way pop" style="--d:1.02s;min-height:200px"><span class="n" style="background:#38a3ff">14</span>
+        <span class="ic float" style="--fd:2.4s">🪜</span>
+        <div class="lbl"><span data-l="ru">Этапы</span><span data-l="ky">Этаптар</span></div>
+        <div class="q"><span data-l="ru">Дизайн → экраны → база → запуск</span><span data-l="ky">Дизайн → экрандар → база → ишке киргизүү</span></div></div>
+    </div>
+  </section>
+
+  <!-- 5. Роли -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 20px">
+      <span data-l="ru">Кто пользуется <span class="hl">меню</span></span>
+      <span data-l="ky">Менюну <span class="hl">ким</span> колдонот</span>
+    </h2>
+    <svg viewBox="0 0 1660 600" width="1660" height="600" style="overflow:visible">
+      <!-- Нити от ролей к меню -->
+      <g fill="none" stroke="#d9d6cf" stroke-width="5" stroke-linecap="round">
+        <path class="draw" pathLength="1" style="--d:1s;--t:.5s" d="M400 135 C 560 135, 600 240, 730 240"/>
+        <path class="draw" pathLength="1" style="--d:1.1s;--t:.5s" d="M400 465 C 560 465, 600 370, 730 370"/>
+        <path class="draw" pathLength="1" style="--d:1.2s;--t:.5s" d="M930 240 C 1060 240, 1100 135, 1260 135"/>
+        <path class="draw" pathLength="1" style="--d:1.3s;--t:.5s" d="M930 370 C 1060 370, 1100 465, 1260 465"/>
+      </g>
+      <!-- Заказ бежит: гость → меню → кухня -->
+      <g class="fade" style="--d:1.8s"><text font-size="40" text-anchor="middle">🧾
+        <animateMotion dur="4s" repeatCount="indefinite" begin="indefinite" path="M400 148 C 560 148, 600 252, 730 252 H930 C 1060 252, 1100 148, 1260 148"/>
+      </text></g>
+      <!-- Меню в телефоне -->
+      <g class="pop" style="--d:.3s">
+        <rect x="730" y="80" width="200" height="440" rx="34" fill="#1c1e27" filter="url(#sh)"/>
+        <rect x="742" y="92" width="176" height="416" rx="26" fill="#fff"/>
+        <rect x="760" y="116" width="140" height="26" rx="10" fill="#5b6cff"/>
+        <rect x="760" y="158" width="140" height="96" rx="14" fill="#ffe9d6"/><text x="830" y="222" font-size="44" text-anchor="middle">🍲</text>
+        <rect x="760" y="268" width="66" height="66" rx="12" fill="#e3f7f1"/><text x="793" y="312" font-size="30" text-anchor="middle">🥟</text>
+        <rect x="834" y="268" width="66" height="66" rx="12" fill="#eef0ff"/><text x="867" y="312" font-size="30" text-anchor="middle">🍵</text>
+        <rect x="760" y="350" width="140" height="12" rx="6" fill="#e7e3dc"/><rect x="760" y="372" width="100" height="12" rx="6" fill="#e7e3dc"/>
+        <rect x="760" y="452" width="140" height="36" rx="18" fill="#5b6cff"/>
+      </g>
+      <!-- Роли -->
+      <g class="from-l" style="--d:.5s">
+        <rect x="60" y="40" width="340" height="190" rx="28" fill="#fff" filter="url(#sh)"/>
+        <text x="120" y="152" font-size="64" text-anchor="middle">🙋</text>
+        <text x="176" y="122" font-size="34" font-weight="800" fill="#1c1e27" data-l="ru">Гость</text><text x="176" y="122" font-size="34" font-weight="800" fill="#1c1e27" data-l="ky">Конок</text>
+        <text x="176" y="164" font-size="24" font-weight="700" fill="#6c7080" data-l="ru">заказывает</text><text x="176" y="164" font-size="24" font-weight="700" fill="#6c7080" data-l="ky">буйрутма берет</text>
+      </g>
+      <g class="from-l" style="--d:.65s">
+        <rect x="60" y="370" width="340" height="190" rx="28" fill="#fff" filter="url(#sh)"/>
+        <text x="120" y="482" font-size="64" text-anchor="middle">🧑‍💼</text>
+        <text x="176" y="452" font-size="34" font-weight="800" fill="#1c1e27" data-l="ru">Владелец</text><text x="176" y="452" font-size="34" font-weight="800" fill="#1c1e27" data-l="ky">Ээси</text>
+        <text x="176" y="494" font-size="24" font-weight="700" fill="#6c7080" data-l="ru">меняет меню</text><text x="176" y="494" font-size="24" font-weight="700" fill="#6c7080" data-l="ky">менюну өзгөртөт</text>
+      </g>
+      <g class="from-r" style="--d:.5s">
+        <rect x="1260" y="40" width="340" height="190" rx="28" fill="#fff" filter="url(#sh)"/>
+        <text x="1320" y="152" font-size="64" text-anchor="middle">🧑‍🍳</text>
+        <text x="1376" y="122" font-size="34" font-weight="800" fill="#1c1e27" data-l="ru">Кухня</text><text x="1376" y="122" font-size="34" font-weight="800" fill="#1c1e27" data-l="ky">Ашкана</text>
+        <text x="1376" y="164" font-size="24" font-weight="700" fill="#6c7080" data-l="ru">готовит</text><text x="1376" y="164" font-size="24" font-weight="700" fill="#6c7080" data-l="ky">даярдайт</text>
+      </g>
+      <g class="from-r" style="--d:.65s">
+        <rect x="1260" y="370" width="340" height="190" rx="28" fill="#fff" filter="url(#sh)"/>
+        <text x="1320" y="482" font-size="64" text-anchor="middle">🏃</text>
+        <text x="1376" y="452" font-size="34" font-weight="800" fill="#1c1e27">Официант</text>
+        <text x="1376" y="494" font-size="24" font-weight="700" fill="#6c7080" data-l="ru">приносит</text><text x="1376" y="494" font-size="24" font-weight="700" fill="#6c7080" data-l="ky">алып келет</text>
+      </g>
+      <g transform="translate(1568,404)"><g class="pop" style="--d:2.2s"><text class="wiggle" font-size="40" text-anchor="middle">🔔</text></g></g>
+      <g transform="translate(368,404)"><g class="pop" style="--d:2.4s"><text class="float" font-size="38" text-anchor="middle">✏️</text></g></g>
+    </svg>
+  </section>
+
+  <!-- 6. Сначала — самое нужное -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0 0 10px">
+      <span data-l="ru">Сначала — <span class="hl">самое нужное</span></span>
+      <span data-l="ky">Адегенде — <span class="hl">эң керектүүсү</span></span>
+    </h2>
+    <div class="vs">
+      <div class="vcard good from-l" style="--d:.3s">
+        <div class="vhead">✅ <span data-l="ru">Версия 1</span><span data-l="ky">1-версия</span></div>
+        <div class="dd" style="grid-template-columns:1fr;margin:0"><div>
+          <div class="it pop" style="--d:.6s"><span class="e">📋</span><span data-l="ru">Меню с фото</span><span data-l="ky">Сүрөттүү меню</span></div>
+          <div class="it pop" style="--d:.75s"><span class="e">🛒</span><span data-l="ru">Корзина</span><span data-l="ky">Себет</span></div>
+          <div class="it pop" style="--d:.9s"><span class="e">🪑</span><span data-l="ru">Заказ на стол</span><span data-l="ky">Столго буйрутма</span></div>
+          <div class="it pop" style="--d:1.05s;border-bottom:0"><span class="e">🍳</span><span data-l="ru">Экран кухни</span><span data-l="ky">Ашкана экраны</span></div>
+        </div></div>
+      </div>
+      <div class="vcard from-r" style="--d:.5s">
+        <div class="vhead" style="color:#6c7080">⏳ <span data-l="ru">Потом</span><span data-l="ky">Кийин</span></div>
+        <div class="dd" style="grid-template-columns:1fr;margin:0"><div>
+          <div class="it from-l" style="--d:1.5s;color:#6c7080"><span class="e">💳</span><span data-l="ru">Оплата</span><span data-l="ky">Төлөм</span></div>
+          <div class="it from-l" style="--d:1.65s;color:#6c7080"><span class="e">🤖</span><span data-l="ru">ИИ-помощник</span><span data-l="ky">ЖИ-жардамчы</span></div>
+          <div class="it from-l" style="--d:1.8s;color:#6c7080"><span class="e">🌍</span><span data-l="ru">Больше языков</span><span data-l="ky">Көбүрөөк тил</span></div>
+          <div class="it from-l" style="--d:1.95s;color:#6c7080;border-bottom:0"><span class="e">📊</span><span data-l="ru">Статистика</span><span data-l="ky">Статистика</span></div>
+        </div></div>
+      </div>
+    </div>
+    <p class="sub rise" style="--d:2.3s;margin:26px 0 0;font-size:32px">🚀 <span data-l="ru">Маленькая версия — быстрее запуск</span><span data-l="ky">Кичине версия — тезирээк ишке кирет</span></p>
+  </section>
+
+  <!-- 7. Запомните -->
+  <section class="slide">
+    <h2 class="rise" style="margin:0">
+      <span data-l="ru"><span class="hl">Запомните</span></span>
+      <span data-l="ky"><span class="hl">Эсиңизде болсун</span></span>
+    </h2>
+    <div class="eqn">
+      <div class="t pop" style="--d:.3s"><span class="icon float">🎯</span><div class="lbl"><span data-l="ru">Цель</span><span data-l="ky">Максат</span></div></div>
+      <span class="op pop" style="--d:.5s">+</span>
+      <div class="t pop" style="--d:.7s"><span class="icon float" style="--fd:.4s">👥</span><div class="lbl"><span data-l="ru">Роли</span><span data-l="ky">Ролдор</span></div></div>
+      <span class="op pop" style="--d:.9s">+</span>
+      <div class="t pop" style="--d:1.1s"><span class="icon float" style="--fd:.8s">📱</span><div class="lbl"><span data-l="ru">Экраны</span><span data-l="ky">Экрандар</span></div></div>
+      <span class="op pop" style="--d:1.3s">=</span>
+      <div class="t pop" style="--d:1.5s;border-color:#bfeee0"><span class="icon float" style="--fd:1.2s">📋</span><div class="lbl">ТЗ</div></div>
+    </div>
+    <p class="sub rise" style="--d:1.9s;margin:30px 0 0">💡 <span data-l="ru">Сначала чертёж — потом стройка</span><span data-l="ky">Адегенде чийме — анан курулуш</span></p>
+  </section>
+
+  <div class="counter"></div>
+  <div class="progress"></div>
+</div>
+
+<script src="deck.js"></script>
+</body>
+</html>
